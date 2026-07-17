@@ -1,15 +1,17 @@
 export const portfolio = {
   name: "Antophic",
   initials: "A",
-  role: "Web Developer & UI Builder",
+  role: "Frontend Developer",
+  specialty: "UI Engineering & Responsive Web",
   location: "Indonesia",
-  availability: "Open untuk kolaborasi web, UI, dan produk digital.",
-  eyebrow: "Portfolio pribadi",
-  headline: "Merapikan ide mentah menjadi website yang enak dipakai.",
+  status: "Available for selected projects",
+  eyebrow: "Professional Portfolio",
+  headline: "Membangun website modern yang rapi, cepat, dan mudah dipercaya.",
   summary:
-    "Saya suka membangun antarmuka yang terasa jelas: cepat dibuka, nyaman dibaca, rapi di mobile, dan mudah dirawat setelah project selesai.",
+    "Saya membantu mengubah ide menjadi antarmuka web yang jelas, responsif, dan siap dikembangkan. Fokus saya ada di struktur yang bersih, pengalaman pengguna, dan detail implementasi yang terasa profesional.",
   description:
-    "Portfolio Antophic, web developer yang fokus pada antarmuka modern, pengalaman pengguna, dan implementasi web yang rapi.",
+    "Portfolio Antophic, frontend developer yang fokus pada website modern, UI engineering, responsive interface, dan handoff yang rapi.",
+  avatar: "https://avatars.githubusercontent.com/u/245324916?v=4",
   contact: {
     label: "Diskusi project",
     href: "mailto:hello@antophic.dev",
@@ -18,27 +20,41 @@ export const portfolio = {
     { label: "GitHub", href: "https://github.com/Antophic" },
     { label: "Repository", href: "https://github.com/Antophic/Portofolio" },
   ],
-  stats: [
-    { value: "01", label: "Fokus pada detail yang terasa saat dipakai" },
-    { value: "02", label: "Layout responsif dari awal, bukan tempelan akhir" },
-    { value: "03", label: "Dokumentasi singkat supaya mudah dilanjutkan" },
+  metrics: [
+    { value: "01", label: "Product-minded interface" },
+    { value: "02", label: "Responsive from day one" },
+    { value: "03", label: "Clean handoff structure" },
   ],
-  advantages: [
+  strengths: [
     {
-      title: "Peka rasa produk",
-      body: "Tidak cuma membuat tampilan jadi ramai. Saya mencari ritme halaman: apa yang perlu dilihat dulu, apa yang bisa diam, dan bagian mana yang harus terasa meyakinkan.",
+      title: "Interface yang terasa meyakinkan",
+      body: "Saya menata hirarki, ruang kosong, kontras, dan copy supaya halaman tidak hanya terlihat bagus, tapi juga mudah dipercaya oleh pengunjung.",
     },
     {
-      title: "Cepat membuat versi nyata",
-      body: "Saya nyaman mengubah ide abstrak menjadi prototype yang bisa dicoba. Dari situ keputusan desain dan fitur jadi lebih mudah dibahas.",
+      title: "Implementasi frontend yang rapi",
+      body: "Komponen, data, dan style dibuat terpisah dengan pola yang mudah dibaca, sehingga website tidak cepat sulit dirawat.",
     },
     {
-      title: "Rapi saat diwariskan",
-      body: "Struktur konten, komponen, dan copy dibuat supaya orang berikutnya tidak perlu menebak-nebak ketika ingin mengedit.",
+      title: "Mobile-first yang serius",
+      body: "Setiap section dipikirkan ulang untuk layar kecil: tombol tetap jelas, teks tetap nyaman, dan layout tidak terasa dipaksa mengecil.",
     },
     {
-      title: "Tajam di responsif",
-      body: "Mobile bukan versi mengecil dari desktop. Saya menata ulang prioritas, jarak, dan tombol supaya tetap nyaman di layar kecil.",
+      title: "Cepat menjadi versi nyata",
+      body: "Saya bisa mulai dari ide kasar lalu membentuk prototype yang bisa dicoba, dievaluasi, dan dikembangkan dengan arah yang jelas.",
+    },
+  ],
+  services: [
+    {
+      title: "Portfolio & personal brand",
+      body: "Website pribadi yang terlihat kredibel, mudah diedit, dan siap dibagikan ke calon klien atau recruiter.",
+    },
+    {
+      title: "Landing page produk",
+      body: "Halaman penawaran dengan struktur pesan yang jelas, section yang padat, dan CTA yang tidak terasa maksa.",
+    },
+    {
+      title: "Dashboard & internal tools",
+      body: "Antarmuka kerja yang mengutamakan keterbacaan data, alur pengguna, dan konsistensi komponen.",
     },
   ],
   skills: [
@@ -47,21 +63,22 @@ export const portfolio = {
       items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Responsive UI"],
     },
     {
-      group: "Experience",
-      items: ["UI Composition", "Design Systems", "Microcopy", "Accessibility", "Interaction Polish"],
+      group: "UI Quality",
+      items: ["Design Systems", "Accessibility", "Layout Systems", "Microcopy", "Interaction States"],
     },
     {
       group: "Workflow",
-      items: ["GitHub", "Clean Code", "Content Structure", "Performance Pass", "Documentation"],
+      items: ["GitHub", "Clean Code", "Performance Pass", "Content Structure", "Documentation"],
     },
   ],
   projects: [
     {
       title: "PulseBoard",
-      type: "Dashboard",
+      type: "Dashboard UI",
       year: "2026",
       summary:
-        "Konsep dashboard progress dengan kartu data padat, status ringkas, dan prioritas kerja yang mudah discan.",
+        "Dashboard progress dengan struktur data ringkas, prioritas kerja yang mudah discan, dan visual status yang tidak berlebihan.",
+      result: "Fokus pada clarity, density, dan keputusan cepat.",
       tags: ["React", "Data UI", "Responsive"],
     },
     {
@@ -69,38 +86,40 @@ export const portfolio = {
       type: "Landing Page",
       year: "2026",
       summary:
-        "Sistem landing page modular untuk produk digital, dibuat agar headline, section, dan CTA gampang diganti.",
-      tags: ["Next.js", "Copywriting", "Layout"],
+        "Sistem landing page modular untuk produk digital, dibuat agar headline, section, dan CTA bisa diganti tanpa merusak layout.",
+      result: "Konten fleksibel dengan komposisi visual tetap konsisten.",
+      tags: ["Next.js", "Copy Structure", "Layout"],
     },
     {
       title: "Repo Cleanup Kit",
-      type: "Developer Tooling",
+      type: "Developer Handoff",
       year: "2026",
       summary:
-        "Template struktur repo dengan README jelas, data terpisah, dan alur edit yang tidak bikin project cepat berantakan.",
+        "Template struktur repo dengan README jelas, data terpisah, dan alur edit yang mengurangi kebingungan setelah project selesai.",
+      result: "Lebih mudah dirawat, dilanjutkan, dan dipresentasikan.",
       tags: ["GitHub", "Docs", "Maintenance"],
     },
   ],
   process: [
     {
       step: "01",
-      title: "Dengar konteks",
-      body: "Memahami tujuan, audiens, dan bagian yang paling menentukan rasa percaya.",
+      title: "Clarify",
+      body: "Menentukan tujuan halaman, audiens, dan pesan utama yang perlu terlihat sejak layar pertama.",
     },
     {
       step: "02",
-      title: "Buat bentuk",
-      body: "Menyusun layout, alur baca, dan komponen utama sampai halaman mulai terasa hidup.",
+      title: "Structure",
+      body: "Menyusun section, konten, dan flow agar pengunjung tahu apa yang kamu bisa dan kenapa itu relevan.",
     },
     {
       step: "03",
-      title: "Rapikan detail",
-      body: "Memoles responsif, kontras, jarak, copy, dan state kecil yang sering terlupakan.",
+      title: "Build",
+      body: "Menerjemahkan desain menjadi website responsif dengan komponen dan style yang mudah dipelihara.",
     },
     {
       step: "04",
-      title: "Serahkan jelas",
-      body: "Menyiapkan struktur data dan catatan edit supaya website mudah dilanjutkan.",
+      title: "Polish",
+      body: "Merapikan detail akhir: spacing, kontras, metadata, social preview, dan instruksi edit.",
     },
   ],
 };

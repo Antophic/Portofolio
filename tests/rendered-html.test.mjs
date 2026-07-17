@@ -30,7 +30,8 @@ test("server-renders the Antophic portfolio", async () => {
 
   const html = await response.text();
   assert.match(html, /Antophic/);
-  assert.match(html, /Merapikan ide mentah/);
+  assert.match(html, /Membangun website modern/);
+  assert.match(html, /Professional Portfolio/);
   assert.match(html, /PulseBoard/);
   assert.match(html, /Repo Cleanup Kit/);
   assert.doesNotMatch(html, /react-loading-skeleton|codex-preview/);

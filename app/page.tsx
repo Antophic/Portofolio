@@ -10,15 +10,15 @@ export default function Home() {
           </span>
           <span>
             <strong>{portfolio.name}</strong>
-            <small>{portfolio.role}</small>
+            <small>{portfolio.specialty}</small>
           </span>
         </a>
 
         <nav className="nav-links" aria-label="Navigasi utama">
-          <a href="#kelebihan">Kelebihan</a>
-          <a href="#skill">Skill</a>
-          <a href="#project">Project</a>
-          <a href="#kontak">Kontak</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#work">Work</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
         </nav>
       </header>
 
@@ -35,7 +35,7 @@ export default function Home() {
             </a>
             {portfolio.links.map((link) => (
               <a
-                className="button button-quiet"
+                className="button button-secondary"
                 href={link.href}
                 key={link.label}
                 rel="noreferrer"
@@ -47,56 +47,65 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="workbench" aria-label="Ringkasan kerja Antophic">
-          <div className="workbench-top">
-            <span>ANTOPHIC.WORK</span>
-            <span>{portfolio.location}</span>
+        <aside className="profile-panel" aria-label="Profil singkat Antophic">
+          <div className="profile-head">
+            <img
+              alt="Avatar Antophic"
+              className="profile-avatar"
+              height="96"
+              src={portfolio.avatar}
+              width="96"
+            />
+            <div>
+              <span>{portfolio.status}</span>
+              <h2>{portfolio.name}</h2>
+              <p>{portfolio.role}</p>
+            </div>
           </div>
-          <div className="workbench-grid">
-            <div className="focus-block">
-              <span className="block-label">Current focus</span>
-              <strong>Clean web interface</strong>
-              <p>Jelas dibaca, ringan dipakai, dan gampang diedit.</p>
+
+          <dl className="profile-meta">
+            <div>
+              <dt>Location</dt>
+              <dd>{portfolio.location}</dd>
             </div>
-            <div className="signal-card signal-card-orange">
-              <span>UI</span>
-              <strong>Polish</strong>
+            <div>
+              <dt>Focus</dt>
+              <dd>{portfolio.specialty}</dd>
             </div>
-            <div className="signal-card signal-card-green">
-              <span>Build</span>
-              <strong>Fast</strong>
-            </div>
-            <div className="code-strip" aria-hidden="true">
-              <span>const idea = "ship with taste";</span>
-              <span>layout.check("mobile-first");</span>
-              <span>handoff.make("editable");</span>
-            </div>
+          </dl>
+
+          <div className="capability-list" aria-label="Highlight kemampuan">
+            {portfolio.metrics.map((item) => (
+              <div key={item.value}>
+                <span>{item.value}</span>
+                <strong>{item.label}</strong>
+              </div>
+            ))}
           </div>
         </aside>
       </section>
 
-      <section className="stats-strip" aria-label="Cara kerja singkat">
-        {portfolio.stats.map((item) => (
-          <article className="stat-item" key={item.value}>
-            <strong>{item.value}</strong>
-            <span>{item.label}</span>
-          </article>
-        ))}
+      <section className="section intro-band" aria-label="Ringkasan nilai">
+        <p>
+          Professional web presence untuk orang yang ingin terlihat serius:
+          struktur jelas, tampilan tenang, performa siap, dan konten mudah
+          diperbarui.
+        </p>
       </section>
 
-      <section className="section section-split" id="kelebihan">
+      <section className="section section-split" id="expertise">
         <div className="section-heading">
-          <p className="section-kicker">Kelebihan</p>
-          <h2>Yang saya bawa ke setiap project.</h2>
+          <p className="section-kicker">Expertise</p>
+          <h2>Kualitas yang saya jaga di setiap website.</h2>
           <p>
-            Kekuatan utamanya ada di rasa, kerapian, dan kemampuan membuat
-            sesuatu yang bisa dipakai cepat tanpa kehilangan arah visual.
+            Saya menggabungkan rasa desain dan implementasi frontend supaya
+            hasil akhirnya terlihat matang, bukan sekadar tersusun.
           </p>
         </div>
 
-        <div className="advantage-grid">
-          {portfolio.advantages.map((item) => (
-            <article className="advantage-card" key={item.title}>
+        <div className="strength-grid">
+          {portfolio.strengths.map((item) => (
+            <article className="strength-card" key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
@@ -104,17 +113,76 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section skill-section" id="skill">
+      <section className="section service-section">
+        <div className="section-heading section-heading-row">
+          <div>
+            <p className="section-kicker">What I Build</p>
+            <h2>Website yang dibuat untuk dipakai, bukan cuma dilihat.</h2>
+          </div>
+          <p>
+            Setiap jenis project punya prioritas berbeda. Saya menjaga agar
+            tampilan, konten, dan struktur teknisnya bergerak ke tujuan yang
+            sama.
+          </p>
+        </div>
+
+        <div className="service-grid">
+          {portfolio.services.map((service) => (
+            <article className="service-card" key={service.title}>
+              <h3>{service.title}</h3>
+              <p>{service.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section work-section" id="work">
+        <div className="section-heading section-heading-row">
+          <div>
+            <p className="section-kicker">Selected Work</p>
+            <h2>Project pilihan dengan arah yang jelas.</h2>
+          </div>
+          <p>
+            Setiap project dirancang untuk menunjukkan konteks, keputusan
+            desain, hasil, dan teknologi yang dipakai secara ringkas.
+          </p>
+        </div>
+
+        <div className="project-list">
+          {portfolio.projects.map((project) => (
+            <article className="project-row" key={project.title}>
+              <div className="project-meta">
+                <span>{project.type}</span>
+                <span>{project.year}</span>
+              </div>
+              <div className="project-main">
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+              </div>
+              <div className="project-result">
+                <strong>{project.result}</strong>
+                <div className="tag-list">
+                  {project.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section skill-section">
         <div className="section-heading">
-          <p className="section-kicker">Skill</p>
-          <h2>Stack yang dipakai untuk bikin web terasa matang.</h2>
+          <p className="section-kicker">Skill Stack</p>
+          <h2>Skill yang mendukung eksekusi dari ide ke website siap pakai.</h2>
         </div>
 
         <div className="skill-grid">
           {portfolio.skills.map((group) => (
             <article className="skill-card" key={group.group}>
               <h3>{group.group}</h3>
-              <div className="skill-tags">
+              <div className="tag-list">
                 {group.items.map((skill) => (
                   <span key={skill}>{skill}</span>
                 ))}
@@ -124,41 +192,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="project">
-        <div className="section-heading section-heading-row">
-          <div>
-            <p className="section-kicker">Project</p>
-            <h2>Project pilihan yang menunjukkan cara saya berpikir.</h2>
-          </div>
-          <p>
-            Saya menampilkan project lewat konteks, keputusan, dan detail kecil
-            yang membuat hasil akhirnya lebih enak dipakai.
-          </p>
-        </div>
-
-        <div className="project-grid">
-          {portfolio.projects.map((project) => (
-            <article className="project-card" key={project.title}>
-              <div className="project-meta">
-                <span>{project.type}</span>
-                <span>{project.year}</span>
-              </div>
-              <h3>{project.title}</h3>
-              <p>{project.summary}</p>
-              <div className="project-tags">
-                {project.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section process-section">
+      <section className="section process-section" id="process">
         <div className="section-heading">
-          <p className="section-kicker">Alur</p>
-          <h2>Cara saya menjaga project tetap bergerak.</h2>
+          <p className="section-kicker">Process</p>
+          <h2>Alur kerja yang menjaga hasil tetap fokus.</h2>
         </div>
 
         <div className="process-list">
@@ -174,13 +211,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact-band" id="kontak">
+      <section className="contact-band" id="contact">
         <div>
-          <p className="section-kicker">Kontak</p>
-          <h2>{portfolio.availability}</h2>
+          <p className="section-kicker">Contact</p>
+          <h2>{portfolio.status}</h2>
+          <p>
+            Cocok kalau kamu butuh portfolio, landing page, atau interface web
+            yang terlihat lebih dewasa dan siap dipresentasikan.
+          </p>
         </div>
         <a className="button button-primary" href={portfolio.contact.href}>
-          Mulai ngobrol
+          Mulai diskusi
           <span aria-hidden="true">-&gt;</span>
         </a>
       </section>
