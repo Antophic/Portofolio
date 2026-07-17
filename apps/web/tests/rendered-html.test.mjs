@@ -61,6 +61,9 @@ test("keeps portfolio content easy to edit", async () => {
   assert.match(page, /content\.projects\.items\.map/);
   assert.match(page, /content\.experience\.items\.map/);
   assert.match(page, /useState<Language>\("en"\)/);
+  assert.match(page, /IntersectionObserver/);
+  assert.match(page, /scroll-progress/);
+  assert.match(page, /data-reveal/);
   assert.match(page, /className="brand-avatar"/);
   assert.doesNotMatch(page, /portfolio\.initials/);
   assert.match(layout, /generateMetadata/);

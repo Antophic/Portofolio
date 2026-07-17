@@ -1,18 +1,117 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { portfolio } from "@antophic/portfolio-content";
 
 type Language = keyof typeof portfolio.languages;
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>("en");
+  const [activeSection, setActiveSection] = useState("about");
+  const [scrollProgress, setScrollProgress] = useState(0);
   const content = portfolio.languages[language];
+  const navItems = [
+    { id: "about", label: content.nav.about },
+    { id: "experience", label: content.nav.experience },
+    { id: "projects", label: content.nav.projects },
+    { id: "contact", label: content.nav.contact },
+  ];
+
+  useEffect(() => {
+    let frame = 0;
+
+    const updateScrollProgress = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const scrollable =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const current = scrollable > 0 ? window.scrollY / scrollable : 0;
+        setScrollProgress(Math.min(Math.max(current, 0), 1));
+      });
+    };
+
+    updateScrollProgress();
+    window.addEventListener("scroll", updateScrollProgress, { passive: true });
+    window.addEventListener("resize", updateScrollProgress);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", updateScrollProgress);
+      window.removeEventListener("resize", updateScrollProgress);
+    };
+  }, []);
+
+  useEffect(() => {
+    const sections = ["about", "experience", "projects", "contact"]
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-38% 0px -52% 0px",
+        threshold: 0,
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const root = document.documentElement;
+    const revealElements = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-reveal]"),
+    );
+
+    if (reduceMotion.matches) {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+      return undefined;
+    }
+
+    root.classList.add("scroll-ready");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.14,
+      },
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+
+    return () => {
+      observer.disconnect();
+      root.classList.remove("scroll-ready");
+    };
+  }, [language]);
 
   return (
     <main className="site-shell" lang={language}>
-      <header className="topbar" id="home">
+      <div
+        aria-hidden="true"
+        className="scroll-progress"
+        style={{ transform: `scaleX(${scrollProgress})` }}
+      />
+
+      <header className={scrollProgress > 0.02 ? "topbar is-scrolled" : "topbar"} id="home">
         <a className="brand-lockup" href="#home" aria-label="Antophic home">
           <span className="brand-mark" aria-hidden="true">
             <Image
@@ -32,10 +131,16 @@ export default function Home() {
 
         <div className="topbar-actions">
           <nav className="nav-links" aria-label="Primary navigation">
-            <a href="#about">{content.nav.about}</a>
-            <a href="#experience">{content.nav.experience}</a>
-            <a href="#projects">{content.nav.projects}</a>
-            <a href="#contact">{content.nav.contact}</a>
+            {navItems.map((item) => (
+              <a
+                aria-current={activeSection === item.id ? "true" : undefined}
+                className={activeSection === item.id ? "is-active" : ""}
+                href={`#${item.id}`}
+                key={item.id}
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
 
           <div className="language-switch" aria-label="Language selection" role="group">
@@ -65,7 +170,7 @@ export default function Home() {
       </div>
 
       <section className="hero-section" aria-labelledby="hero-title">
-        <div className="hero-copy">
+        <div className="hero-copy" data-reveal="left">
           <p className="eyebrow">{content.eyebrow}</p>
           <h1 id="hero-title">{content.headline}</h1>
           <p className="hero-summary">{content.subheadline}</p>
@@ -81,7 +186,12 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="profile-panel" aria-label="Antophic profile summary">
+        <aside
+          className="profile-panel"
+          aria-label="Antophic profile summary"
+          data-reveal="right"
+          style={{ transitionDelay: "90ms" }}
+        >
           <div className="profile-head">
             <Image
               alt="GitHub profile avatar for Antophic"
@@ -125,18 +235,23 @@ export default function Home() {
       </section>
 
       <section className="section section-split" id="about">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal="left">
           <p className="section-kicker">{content.about.kicker}</p>
           <h2>{content.about.title}</h2>
         </div>
 
-        <div className="about-copy">
+        <div className="about-copy" data-reveal="right" style={{ transitionDelay: "80ms" }}>
           {content.about.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
           <div className="strength-grid">
-            {content.strengths.map((item) => (
-              <article className="strength-card" key={item.title}>
+            {content.strengths.map((item, index) => (
+              <article
+                className="strength-card"
+                data-reveal
+                key={item.title}
+                style={{ transitionDelay: `${index * 70}ms` }}
+              >
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
               </article>
@@ -146,14 +261,19 @@ export default function Home() {
       </section>
 
       <section className="section section-split" id="experience">
-        <div className="section-heading sticky-heading">
+        <div className="section-heading sticky-heading" data-reveal="left">
           <p className="section-kicker">{content.experience.kicker}</p>
           <h2>{content.experience.title}</h2>
         </div>
 
         <div className="experience-list">
-          {content.experience.items.map((item) => (
-            <article className="experience-item" key={`${item.period}-${item.role}`}>
+          {content.experience.items.map((item, index) => (
+            <article
+              className="experience-item"
+              data-reveal="right"
+              key={`${item.period}-${item.role}`}
+              style={{ transitionDelay: `${index * 85}ms` }}
+            >
               <div className="item-period">{item.period}</div>
               <div>
                 <h3>
@@ -173,7 +293,7 @@ export default function Home() {
       </section>
 
       <section className="section project-section" id="projects">
-        <div className="section-heading section-heading-row">
+        <div className="section-heading section-heading-row" data-reveal>
           <div>
             <p className="section-kicker">{content.projects.kicker}</p>
             <h2>{content.projects.title}</h2>
@@ -183,7 +303,12 @@ export default function Home() {
 
         <div className="project-list">
           {content.projects.items.map((project, index) => (
-            <article className="project-card" key={project.title}>
+            <article
+              className="project-card"
+              data-reveal
+              key={project.title}
+              style={{ transitionDelay: `${index * 90}ms` }}
+            >
               <div className="project-index">{String(index + 1).padStart(2, "0")}</div>
               <div>
                 <div className="project-meta">
@@ -206,15 +331,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section skill-section">
+      <section className="section skill-section" data-reveal>
         <div className="section-heading">
           <p className="section-kicker">{content.skills.kicker}</p>
           <h2>{content.skills.title}</h2>
         </div>
 
         <div className="skill-grid">
-          {content.skills.groups.map((group) => (
-            <article className="skill-card" key={group.group}>
+          {content.skills.groups.map((group, index) => (
+            <article
+              className="skill-card"
+              data-reveal
+              key={group.group}
+              style={{ transitionDelay: `${index * 70}ms` }}
+            >
               <h3>{group.group}</h3>
               <div className="tag-list">
                 {group.items.map((skill) => (
@@ -226,15 +356,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section process-section">
+      <section className="section process-section" data-reveal>
         <div className="section-heading">
           <p className="section-kicker">{content.process.kicker}</p>
           <h2>{content.process.title}</h2>
         </div>
 
         <div className="process-list">
-          {content.process.steps.map((item) => (
-            <article className="process-item" key={item.step}>
+          {content.process.steps.map((item, index) => (
+            <article
+              className="process-item"
+              data-reveal
+              key={item.step}
+              style={{ transitionDelay: `${index * 70}ms` }}
+            >
               <span>{item.step}</span>
               <div>
                 <h3>{item.title}</h3>
@@ -245,7 +380,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact-band" id="contact">
+      <section className="contact-band" id="contact" data-reveal>
         <div>
           <p className="section-kicker">{content.contact.kicker}</p>
           <h2>{content.contact.title}</h2>
