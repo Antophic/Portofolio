@@ -30,8 +30,11 @@ test("server-renders the Antophic portfolio", async () => {
 
   const html = await response.text();
   assert.match(html, /Antophic/);
-  assert.match(html, /Membangun website modern/);
+  assert.match(html, /I build modern websites/);
   assert.match(html, /Professional Portfolio/);
+  assert.match(html, /newcastlezzz900@gmail\.com/);
+  assert.match(html, />EN</);
+  assert.match(html, />ID</);
   assert.match(html, /PulseBoard/);
   assert.match(html, /Repo Cleanup Kit/);
   assert.doesNotMatch(html, /react-loading-skeleton|codex-preview/);
@@ -47,9 +50,12 @@ test("keeps portfolio content easy to edit", async () => {
   ]);
 
   assert.match(data, /export const portfolio/);
-  assert.match(data, /skills:/);
+  assert.match(data, /languages:/);
+  assert.match(data, /Saya membangun website modern/);
+  assert.match(data, /skillsList:/);
   assert.match(data, /projects:/);
-  assert.match(page, /portfolio\.projects\.map/);
+  assert.match(page, /content\.projects\.map/);
+  assert.match(page, /useState<Language>\("en"\)/);
   assert.match(layout, /generateMetadata/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.ok(!files.includes("_sites-preview"));

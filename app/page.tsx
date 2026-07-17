@@ -1,8 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import { portfolio } from "./portfolio-data";
 
+type Language = keyof typeof portfolio.languages;
+
 export default function Home() {
+  const [language, setLanguage] = useState<Language>("en");
+  const content = portfolio.languages[language];
+
   return (
-    <main className="site-shell">
+    <main className="site-shell" lang={language}>
       <header className="topbar" id="home">
         <a className="brand-lockup" href="#home" aria-label="Antophic home">
           <span className="brand-mark" aria-hidden="true">
@@ -14,23 +22,40 @@ export default function Home() {
           </span>
         </a>
 
-        <nav className="nav-links" aria-label="Navigasi utama">
-          <a href="#expertise">Expertise</a>
-          <a href="#work">Work</a>
-          <a href="#process">Process</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div className="topbar-actions">
+          <nav className="nav-links" aria-label="Primary navigation">
+            <a href="#expertise">{content.nav.expertise}</a>
+            <a href="#work">{content.nav.work}</a>
+            <a href="#process">{content.nav.process}</a>
+            <a href="#contact">{content.nav.contact}</a>
+          </nav>
+
+          <div className="language-switch" aria-label="Language selection" role="group">
+            {Object.entries(portfolio.languages).map(([code, item]) => (
+              <button
+                aria-label={item.ariaLabel}
+                aria-pressed={language === code}
+                className={language === code ? "is-active" : ""}
+                key={code}
+                onClick={() => setLanguage(code as Language)}
+                type="button"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
       </header>
 
       <section className="hero-section" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow">{portfolio.eyebrow}</p>
-          <h1 id="hero-title">{portfolio.headline}</h1>
-          <p className="hero-summary">{portfolio.summary}</p>
+          <p className="eyebrow">{content.eyebrow}</p>
+          <h1 id="hero-title">{content.headline}</h1>
+          <p className="hero-summary">{content.summary}</p>
 
-          <div className="hero-actions" aria-label="Aksi utama">
+          <div className="hero-actions" aria-label="Main actions">
             <a className="button button-primary" href={portfolio.contact.href}>
-              {portfolio.contact.label}
+              {content.contactLabel}
               <span aria-hidden="true">-&gt;</span>
             </a>
             {portfolio.links.map((link) => (
@@ -47,17 +72,17 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="profile-panel" aria-label="Profil singkat Antophic">
+        <aside className="profile-panel" aria-label="Antophic profile summary">
           <div className="profile-head">
             <img
-              alt="Avatar Antophic"
+              alt="GitHub profile avatar for Antophic"
               className="profile-avatar"
               height="96"
               src={portfolio.avatar}
               width="96"
             />
             <div>
-              <span>{portfolio.status}</span>
+              <span>{content.status}</span>
               <h2>{portfolio.name}</h2>
               <p>{portfolio.role}</p>
             </div>
@@ -65,17 +90,17 @@ export default function Home() {
 
           <dl className="profile-meta">
             <div>
-              <dt>Location</dt>
+              <dt>{content.profile.locationLabel}</dt>
               <dd>{portfolio.location}</dd>
             </div>
             <div>
-              <dt>Focus</dt>
+              <dt>{content.profile.focusLabel}</dt>
               <dd>{portfolio.specialty}</dd>
             </div>
           </dl>
 
-          <div className="capability-list" aria-label="Highlight kemampuan">
-            {portfolio.metrics.map((item) => (
+          <div className="capability-list" aria-label="Capability highlights">
+            {content.metrics.map((item) => (
               <div key={item.value}>
                 <span>{item.value}</span>
                 <strong>{item.label}</strong>
@@ -85,26 +110,19 @@ export default function Home() {
         </aside>
       </section>
 
-      <section className="section intro-band" aria-label="Ringkasan nilai">
-        <p>
-          Professional web presence untuk orang yang ingin terlihat serius:
-          struktur jelas, tampilan tenang, performa siap, dan konten mudah
-          diperbarui.
-        </p>
+      <section className="section intro-band" aria-label="Value summary">
+        <p>{content.intro}</p>
       </section>
 
       <section className="section section-split" id="expertise">
         <div className="section-heading">
-          <p className="section-kicker">Expertise</p>
-          <h2>Kualitas yang saya jaga di setiap website.</h2>
-          <p>
-            Saya menggabungkan rasa desain dan implementasi frontend supaya
-            hasil akhirnya terlihat matang, bukan sekadar tersusun.
-          </p>
+          <p className="section-kicker">{content.expertise.kicker}</p>
+          <h2>{content.expertise.title}</h2>
+          <p>{content.expertise.body}</p>
         </div>
 
         <div className="strength-grid">
-          {portfolio.strengths.map((item) => (
+          {content.strengths.map((item) => (
             <article className="strength-card" key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
@@ -116,18 +134,14 @@ export default function Home() {
       <section className="section service-section">
         <div className="section-heading section-heading-row">
           <div>
-            <p className="section-kicker">What I Build</p>
-            <h2>Website yang dibuat untuk dipakai, bukan cuma dilihat.</h2>
+            <p className="section-kicker">{content.services.kicker}</p>
+            <h2>{content.services.title}</h2>
           </div>
-          <p>
-            Setiap jenis project punya prioritas berbeda. Saya menjaga agar
-            tampilan, konten, dan struktur teknisnya bergerak ke tujuan yang
-            sama.
-          </p>
+          <p>{content.services.body}</p>
         </div>
 
         <div className="service-grid">
-          {portfolio.services.map((service) => (
+          {content.services.items.map((service) => (
             <article className="service-card" key={service.title}>
               <h3>{service.title}</h3>
               <p>{service.body}</p>
@@ -139,17 +153,14 @@ export default function Home() {
       <section className="section work-section" id="work">
         <div className="section-heading section-heading-row">
           <div>
-            <p className="section-kicker">Selected Work</p>
-            <h2>Project pilihan dengan arah yang jelas.</h2>
+            <p className="section-kicker">{content.work.kicker}</p>
+            <h2>{content.work.title}</h2>
           </div>
-          <p>
-            Setiap project dirancang untuk menunjukkan konteks, keputusan
-            desain, hasil, dan teknologi yang dipakai secara ringkas.
-          </p>
+          <p>{content.work.body}</p>
         </div>
 
         <div className="project-list">
-          {portfolio.projects.map((project) => (
+          {content.projects.map((project) => (
             <article className="project-row" key={project.title}>
               <div className="project-meta">
                 <span>{project.type}</span>
@@ -174,12 +185,12 @@ export default function Home() {
 
       <section className="section skill-section">
         <div className="section-heading">
-          <p className="section-kicker">Skill Stack</p>
-          <h2>Skill yang mendukung eksekusi dari ide ke website siap pakai.</h2>
+          <p className="section-kicker">{content.skills.kicker}</p>
+          <h2>{content.skills.title}</h2>
         </div>
 
         <div className="skill-grid">
-          {portfolio.skills.map((group) => (
+          {content.skillsList.map((group) => (
             <article className="skill-card" key={group.group}>
               <h3>{group.group}</h3>
               <div className="tag-list">
@@ -194,12 +205,12 @@ export default function Home() {
 
       <section className="section process-section" id="process">
         <div className="section-heading">
-          <p className="section-kicker">Process</p>
-          <h2>Alur kerja yang menjaga hasil tetap fokus.</h2>
+          <p className="section-kicker">{content.processIntro.kicker}</p>
+          <h2>{content.processIntro.title}</h2>
         </div>
 
         <div className="process-list">
-          {portfolio.process.map((item) => (
+          {content.process.map((item) => (
             <article className="process-item" key={item.step}>
               <span>{item.step}</span>
               <div>
@@ -213,15 +224,15 @@ export default function Home() {
 
       <section className="contact-band" id="contact">
         <div>
-          <p className="section-kicker">Contact</p>
-          <h2>{portfolio.status}</h2>
-          <p>
-            Cocok kalau kamu butuh portfolio, landing page, atau interface web
-            yang terlihat lebih dewasa dan siap dipresentasikan.
-          </p>
+          <p className="section-kicker">{content.contact.kicker}</p>
+          <h2>{content.contact.title}</h2>
+          <p>{content.contact.body}</p>
+          <a className="contact-email" href={portfolio.contact.href}>
+            {portfolio.contact.email}
+          </a>
         </div>
         <a className="button button-primary" href={portfolio.contact.href}>
-          Mulai diskusi
+          {content.contact.button}
           <span aria-hidden="true">-&gt;</span>
         </a>
       </section>

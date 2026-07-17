@@ -23,6 +23,7 @@ Edit file `app/portfolio-data.ts` untuk mengganti:
 
 - nama, role, lokasi, dan kalimat hero
 - link GitHub, repository, dan email kontak
+- teks bahasa Inggris dan Bahasa Indonesia
 - daftar kelebihan
 - daftar skill
 - daftar project

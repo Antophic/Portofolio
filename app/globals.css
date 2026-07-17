@@ -112,6 +112,13 @@ a {
   justify-content: flex-end;
 }
 
+.topbar-actions {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  justify-content: flex-end;
+}
+
 .nav-links a {
   border-radius: 999px;
   color: var(--muted);
@@ -125,6 +132,39 @@ a {
   background: rgba(36, 88, 166, 0.08);
   color: var(--accent);
   outline: none;
+}
+
+.language-switch {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: inline-flex;
+  padding: 3px;
+}
+
+.language-switch button {
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.78rem;
+  font-weight: 900;
+  min-height: 32px;
+  min-width: 42px;
+  padding: 7px 10px;
+}
+
+.language-switch button:focus-visible {
+  outline: 3px solid rgba(36, 88, 166, 0.26);
+  outline-offset: 2px;
+}
+
+.language-switch button.is-active {
+  background: var(--charcoal);
+  color: #ffffff;
 }
 
 .hero-section {
@@ -556,6 +596,16 @@ h3 {
   max-width: 680px;
 }
 
+.contact-email {
+  color: #ffffff;
+  display: inline-block;
+  font-weight: 760;
+  margin-top: 16px;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.38);
+  text-underline-offset: 5px;
+}
+
 .contact-band .button-primary {
   background: #ffffff;
   border-color: #ffffff;
@@ -567,6 +617,11 @@ h3 {
   .topbar,
   .section-heading-row,
   .contact-band {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .topbar-actions {
     align-items: flex-start;
     flex-direction: column;
   }
@@ -608,6 +663,10 @@ h3 {
 
   .nav-links {
     justify-content: flex-start;
+  }
+
+  .topbar-actions {
+    width: 100%;
   }
 
   .hero-actions {
