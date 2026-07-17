@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { headers } from "next/headers";
+import { portfolio } from "@antophic/portfolio-content";
 import "./globals.css";
-import { portfolio } from "./portfolio-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

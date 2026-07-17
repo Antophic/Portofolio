@@ -42,7 +42,10 @@ test("server-renders the Antophic portfolio", async () => {
 
 test("keeps portfolio content easy to edit", async () => {
   const [data, page, layout, packageJson, files] = await Promise.all([
-    readFile(new URL("../app/portfolio-data.ts", import.meta.url), "utf8"),
+    readFile(
+      new URL("../../../packages/portfolio-content/src/index.ts", import.meta.url),
+      "utf8",
+    ),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),

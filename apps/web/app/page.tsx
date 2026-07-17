@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { portfolio } from "./portfolio-data";
+import { portfolio } from "@antophic/portfolio-content";
 
 type Language = keyof typeof portfolio.languages;
 

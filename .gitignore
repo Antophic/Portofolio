@@ -17,6 +17,9 @@
 /.next/
 /.vinext/
 /out/
+**/.next/
+**/.vinext/
+**/out/
 
 # misc
 .DS_Store
@@ -40,3 +43,7 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+**/dist/
+**/.wrangler/
+**/outputs/
+**/work/

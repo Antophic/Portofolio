@@ -1,7 +1,8 @@
 # Antophic Portfolio
 
-Website portofolio personal untuk Antophic. Konten utama dipisah dari layout
-supaya gampang diedit tanpa perlu membongkar struktur halaman.
+Website portofolio personal untuk Antophic dengan struktur monorepo. Aplikasi
+web, konten portfolio, dan konfigurasi utama dipisah supaya lebih rapi dan
+gampang dikembangkan.
 
 ## Prerequisites
 
@@ -19,7 +20,7 @@ Preview lokal akan berjalan di `http://localhost:3000/`.
 
 ## Cara Edit Konten
 
-Edit file `app/portfolio-data.ts` untuk mengganti:
+Edit file `packages/portfolio-content/src/index.ts` untuk mengganti:
 
 - nama, role, lokasi, dan kalimat hero
 - link GitHub, repository, dan email kontak
@@ -31,16 +32,19 @@ Edit file `app/portfolio-data.ts` untuk mengganti:
 
 Layout dan style utama ada di:
 
-- `app/page.tsx`
-- `app/globals.css`
-- `app/layout.tsx`
+- `apps/web/app/page.tsx`
+- `apps/web/app/globals.css`
+- `apps/web/app/layout.tsx`
 
 ## Struktur
 
-- `app/portfolio-data.ts`: sumber konten yang paling aman untuk diedit
-- `app/page.tsx`: struktur section dan mapping data
-- `app/globals.css`: warna, spacing, responsif, dan visual identity
-- `tests/rendered-html.test.mjs`: test render HTML setelah build
+- `apps/web`: aplikasi portfolio yang di-deploy
+- `apps/web/app`: halaman, layout, dan style website
+- `apps/web/public`: asset public seperti favicon dan Open Graph image
+- `packages/portfolio-content`: data portfolio bilingual yang paling aman diedit
+- `apps/web/tests/rendered-html.test.mjs`: test render HTML setelah build
+- `tsconfig.base.json`: konfigurasi TypeScript bersama
+- `package.json`: script utama dan daftar workspace monorepo
 
 ## Commands
 
