@@ -56,6 +56,8 @@ test("keeps portfolio content easy to edit", async () => {
   assert.match(data, /projects:/);
   assert.match(page, /content\.projects\.map/);
   assert.match(page, /useState<Language>\("en"\)/);
+  assert.match(page, /className="brand-avatar"/);
+  assert.doesNotMatch(page, /portfolio\.initials/);
   assert.match(layout, /generateMetadata/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.ok(!files.includes("_sites-preview"));

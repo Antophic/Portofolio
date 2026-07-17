@@ -1,6 +1,5 @@
 export const portfolio = {
   name: "Antophic",
-  initials: "A",
   role: "Frontend Developer",
   specialty: "UI Engineering & Responsive Web",
   location: "Indonesia",

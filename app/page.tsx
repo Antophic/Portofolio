@@ -14,7 +14,13 @@ export default function Home() {
       <header className="topbar" id="home">
         <a className="brand-lockup" href="#home" aria-label="Antophic home">
           <span className="brand-mark" aria-hidden="true">
-            {portfolio.initials}
+            <img
+              alt=""
+              className="brand-avatar"
+              height="44"
+              src={portfolio.avatar}
+              width="44"
+            />
           </span>
           <span>
             <strong>{portfolio.name}</strong>

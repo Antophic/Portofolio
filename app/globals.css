@@ -75,16 +75,21 @@ a {
 
 .brand-mark {
   align-items: center;
-  background: var(--charcoal);
+  background: var(--paper-strong);
+  border: 1px solid rgba(21, 21, 21, 0.1);
   border-radius: 8px;
-  color: #ffffff;
   display: inline-flex;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 1rem;
-  font-weight: 800;
   height: 44px;
   justify-content: center;
+  overflow: hidden;
   width: 44px;
+}
+
+.brand-avatar {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .brand-lockup strong,
