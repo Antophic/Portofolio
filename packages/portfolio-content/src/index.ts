@@ -107,6 +107,10 @@ export const portfolio = {
               "A bilingual portfolio website with a monorepo structure, scroll interactions, polished dark visuals, and content that stays easy to update.",
             result: "A professional home for profile, skills, projects, and contact.",
             tags: ["Next.js", "TypeScript", "Monorepo"],
+            image: {
+              src: "/projects/ariza-portfolio.svg",
+              alt: "Preview image for the Ariza Portfolio project",
+            },
           },
           {
             title: "Pustaka Banua Raya Website",
@@ -116,6 +120,10 @@ export const portfolio = {
               "A website foundation for a business domain, prepared so the brand can have a cleaner public presence and room to grow.",
             result: "Clearer digital presence for a real-world business project.",
             tags: ["Domain Setup", "Web Presence", "Hosting"],
+            image: {
+              src: "/projects/pustaka-banua-raya.svg",
+              alt: "Preview image for the Pustaka Banua Raya website project",
+            },
           },
           {
             title: "Project Showcase System",
@@ -125,6 +133,10 @@ export const portfolio = {
               "A structured project section built around title, category, status, role, summary, result, and stack so future work can be added neatly.",
             result: "A cleaner place to document everything I build next.",
             tags: ["Content Data", "Project Log", "Case Study"],
+            image: {
+              src: "/projects/project-showcase.svg",
+              alt: "Preview image for the project showcase system",
+            },
           },
         ],
         projectLog: {
@@ -140,6 +152,10 @@ export const portfolio = {
               summary:
                 "A professional portfolio website with English and Indonesian copy, responsive layout, project sections, GitHub profile image, and polished scroll effects.",
               stack: ["Next.js", "React", "TypeScript", "CSS"],
+              image: {
+                src: "/projects/ariza-portfolio.svg",
+                alt: "Thumbnail image for the Ariza Portfolio project",
+              },
             },
             {
               name: "Pustaka Banua Raya Website",
@@ -149,6 +165,10 @@ export const portfolio = {
               summary:
                 "A business website project prepared around domain setup, hosting decisions, and a cleaner public-facing structure.",
               stack: ["Domain", "Hosting", "Website Structure"],
+              image: {
+                src: "/projects/pustaka-banua-raya.svg",
+                alt: "Thumbnail image for the Pustaka Banua Raya website project",
+              },
             },
             {
               name: "Next Project Slot",
@@ -158,6 +178,10 @@ export const portfolio = {
               summary:
                 "A reserved entry for the next project, ready to be replaced with real work, links, stack, and a short result.",
               stack: ["Project Notes", "Case Study", "Links"],
+              image: {
+                src: "/projects/project-showcase.svg",
+                alt: "Thumbnail image for the next project slot",
+              },
             },
           ],
         },
@@ -300,6 +324,10 @@ export const portfolio = {
               "Website portfolio bilingual dengan struktur monorepo, efek scroll, visual dark yang rapi, dan konten yang mudah diperbarui.",
             result: "Rumah profesional untuk profil, skill, project, dan kontak.",
             tags: ["Next.js", "TypeScript", "Monorepo"],
+            image: {
+              src: "/projects/ariza-portfolio.svg",
+              alt: "Gambar preview untuk project Ariza Portfolio",
+            },
           },
           {
             title: "Pustaka Banua Raya Website",
@@ -309,6 +337,10 @@ export const portfolio = {
               "Fondasi website untuk domain bisnis, disiapkan supaya brand punya tampilan publik yang lebih bersih dan bisa dikembangkan.",
             result: "Digital presence yang lebih jelas untuk project bisnis nyata.",
             tags: ["Domain Setup", "Web Presence", "Hosting"],
+            image: {
+              src: "/projects/pustaka-banua-raya.svg",
+              alt: "Gambar preview untuk project website Pustaka Banua Raya",
+            },
           },
           {
             title: "Project Showcase System",
@@ -318,6 +350,10 @@ export const portfolio = {
               "Section project yang dibuat terstruktur dengan judul, kategori, status, role, ringkasan, hasil, dan stack agar project berikutnya mudah ditambahkan.",
             result: "Tempat yang lebih rapi untuk mendokumentasikan semua karya berikutnya.",
             tags: ["Content Data", "Project Log", "Case Study"],
+            image: {
+              src: "/projects/project-showcase.svg",
+              alt: "Gambar preview untuk sistem showcase project",
+            },
           },
         ],
         projectLog: {
@@ -333,6 +369,10 @@ export const portfolio = {
               summary:
                 "Website portfolio profesional dengan copy English dan Indonesia, layout responsif, section project, foto profil GitHub, dan efek scroll yang halus.",
               stack: ["Next.js", "React", "TypeScript", "CSS"],
+              image: {
+                src: "/projects/ariza-portfolio.svg",
+                alt: "Thumbnail untuk project Ariza Portfolio",
+              },
             },
             {
               name: "Pustaka Banua Raya Website",
@@ -342,6 +382,10 @@ export const portfolio = {
               summary:
                 "Project website bisnis yang disiapkan dari domain, keputusan hosting, dan struktur tampilan publik yang lebih rapi.",
               stack: ["Domain", "Hosting", "Website Structure"],
+              image: {
+                src: "/projects/pustaka-banua-raya.svg",
+                alt: "Thumbnail untuk project website Pustaka Banua Raya",
+              },
             },
             {
               name: "Next Project Slot",
@@ -351,6 +395,10 @@ export const portfolio = {
               summary:
                 "Slot untuk project berikutnya, siap diganti dengan karya nyata, link, stack, dan hasil singkat.",
               stack: ["Project Notes", "Case Study", "Links"],
+              image: {
+                src: "/projects/project-showcase.svg",
+                alt: "Thumbnail untuk slot project berikutnya",
+              },
             },
           ],
         },

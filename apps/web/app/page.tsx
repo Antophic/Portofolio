@@ -309,7 +309,17 @@ export default function Home() {
               key={project.title}
               style={{ transitionDelay: `${index * 90}ms` }}
             >
-              <div className="project-index">{String(index + 1).padStart(2, "0")}</div>
+              <figure className="project-visual">
+                <Image
+                  alt={project.image.alt}
+                  className="project-image"
+                  fill
+                  sizes="(max-width: 920px) 100vw, 280px"
+                  src={project.image.src}
+                  unoptimized
+                />
+                <span className="project-index">{String(index + 1).padStart(2, "0")}</span>
+              </figure>
               <div>
                 <div className="project-meta">
                   <span>{project.type}</span>
@@ -345,6 +355,16 @@ export default function Home() {
                 key={project.name}
                 style={{ transitionDelay: `${index * 80}ms` }}
               >
+                <div className="project-log-thumb">
+                  <Image
+                    alt={project.image.alt}
+                    className="project-image"
+                    fill
+                    sizes="(max-width: 920px) 100vw, 150px"
+                    src={project.image.src}
+                    unoptimized
+                  />
+                </div>
                 <div className="project-log-meta">
                   <span>{project.category}</span>
                   <strong>{project.status}</strong>

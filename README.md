@@ -29,7 +29,11 @@ Edit file `packages/portfolio-content/src/index.ts` untuk mengganti:
 - daftar skill
 - daftar project
 - project log untuk menampilkan project yang sedang/pernah dikerjakan
+- gambar project di `apps/web/public/projects`
 - alur kerja
+
+Untuk mengganti gambar project, taruh file baru di `apps/web/public/projects`,
+lalu update `image.src` pada project terkait di `packages/portfolio-content/src/index.ts`.
 
 Layout dan style utama ada di:
 
