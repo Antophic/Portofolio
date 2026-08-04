@@ -9,7 +9,7 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@antophic/portfolio-content": ["../../packages/portfolio-content/src/index.ts"]
+      "@ariza/portfolio-content": ["../../packages/portfolio-content/src/index.ts"]
     }
   },
   "include": [

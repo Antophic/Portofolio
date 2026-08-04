@@ -1,5 +1,5 @@
 {
-  "name": "antophic-portfolio",
+  "name": "ariza-portfolio",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -10,12 +10,12 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run dev -w @antophic/web",
-    "build": "npm run build -w @antophic/web",
-    "start": "npm run start -w @antophic/web",
-    "test": "npm run test -w @antophic/web",
-    "lint": "npm run lint -w @antophic/web",
-    "db:generate": "npm run db:generate -w @antophic/web"
+    "dev": "npm run dev -w @ariza/web",
+    "build": "npm run build -w @ariza/web",
+    "start": "npm run start -w @ariza/web",
+    "test": "npm run test -w @ariza/web",
+    "lint": "npm run lint -w @ariza/web",
+    "db:generate": "npm run db:generate -w @ariza/web"
   },
   "type": "module"
 }

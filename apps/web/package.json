@@ -1,5 +1,5 @@
 {
-  "name": "@antophic/web",
+  "name": "@ariza/web",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -12,7 +12,7 @@
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
-    "@antophic/portfolio-content": "0.1.0",
+    "@ariza/portfolio-content": "0.1.0",
     "drizzle-orm": "0.45.2",
     "next": "16.2.6",
     "react": "19.2.6",

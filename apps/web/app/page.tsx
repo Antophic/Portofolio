@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { portfolio } from "@antophic/portfolio-content";
+import { portfolio } from "@ariza/portfolio-content";
 
 type Language = keyof typeof portfolio.languages;
 
