@@ -639,6 +639,75 @@ h3 {
   line-height: 1.5;
 }
 
+.project-log {
+  border-top: 1px solid var(--line);
+  margin-top: 42px;
+  padding-top: 34px;
+}
+
+.project-log-heading {
+  max-width: 680px;
+}
+
+.project-log-heading h3 {
+  font-size: 1.55rem;
+}
+
+.project-log-heading p:not(.section-kicker) {
+  color: var(--muted);
+  line-height: 1.72;
+  margin: 12px 0 0;
+}
+
+.project-log-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.project-log-item {
+  background: rgba(255, 255, 255, 0.026);
+  border: 1px solid rgba(244, 239, 229, 0.1);
+  border-radius: 8px;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 0.62fr 1.12fr 0.86fr;
+  padding: 22px;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.project-log-item:hover {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(123, 224, 195, 0.24);
+  transform: translateY(-2px);
+}
+
+.project-log-meta {
+  color: var(--muted);
+  display: grid;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.76rem;
+  font-weight: 800;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.project-log-meta strong,
+.project-log-role strong {
+  color: var(--warm);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  text-transform: none;
+}
+
+.project-log-item p {
+  color: var(--muted);
+  line-height: 1.72;
+  margin: 10px 0 0;
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -773,7 +842,8 @@ h3 {
   }
 
   .experience-item,
-  .project-card {
+  .project-card,
+  .project-log-item {
     grid-template-columns: 1fr;
   }
 }
@@ -816,6 +886,7 @@ h3 {
   .profile-panel,
   .contact-band,
   .project-card,
+  .project-log-item,
   .experience-item {
     padding: 20px;
   }

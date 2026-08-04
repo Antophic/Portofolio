@@ -112,7 +112,7 @@ export default function Home() {
       />
 
       <header className={scrollProgress > 0.02 ? "topbar is-scrolled" : "topbar"} id="home">
-        <a className="brand-lockup" href="#home" aria-label="Antophic home">
+        <a className="brand-lockup" href="#home" aria-label={`${portfolio.name} home`}>
           <span className="brand-mark" aria-hidden="true">
             <Image
               alt=""
@@ -188,13 +188,13 @@ export default function Home() {
 
         <aside
           className="profile-panel"
-          aria-label="Antophic profile summary"
+          aria-label={`${portfolio.name} profile summary`}
           data-reveal="right"
           style={{ transitionDelay: "90ms" }}
         >
           <div className="profile-head">
             <Image
-              alt="GitHub profile avatar for Antophic"
+              alt={`GitHub profile avatar for ${portfolio.name}`}
               className="profile-avatar"
               height={96}
               src={portfolio.avatar}
@@ -328,6 +328,42 @@ export default function Home() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="project-log" data-reveal>
+          <div className="project-log-heading">
+            <p className="section-kicker">{content.projects.projectLog.kicker}</p>
+            <h3>{content.projects.projectLog.title}</h3>
+            <p>{content.projects.projectLog.body}</p>
+          </div>
+
+          <div className="project-log-list">
+            {content.projects.projectLog.items.map((project, index) => (
+              <article
+                className="project-log-item"
+                data-reveal
+                key={project.name}
+                style={{ transitionDelay: `${index * 80}ms` }}
+              >
+                <div className="project-log-meta">
+                  <span>{project.category}</span>
+                  <strong>{project.status}</strong>
+                </div>
+                <div>
+                  <h3>{project.name}</h3>
+                  <p>{project.summary}</p>
+                </div>
+                <div className="project-log-role">
+                  <strong>{project.role}</strong>
+                  <div className="tag-list">
+                    {project.stack.map((tool) => (
+                      <span key={tool}>{tool}</span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

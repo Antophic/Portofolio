@@ -23,20 +23,20 @@ async function render() {
   );
 }
 
-test("server-renders the Antophic portfolio", async () => {
+test("server-renders the Ariza portfolio", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Antophic/);
+  assert.match(html, /Ariza/);
   assert.match(html, /I build web interfaces/);
   assert.match(html, /Frontend portfolio/);
   assert.match(html, /newcastlezzz900@gmail\.com/);
   assert.match(html, />EN</);
   assert.match(html, />ID</);
-  assert.match(html, /PulseBoard/);
-  assert.match(html, /Repo Cleanup Kit/);
+  assert.match(html, /Project Log/);
+  assert.match(html, /Pustaka Banua Raya Website/);
   assert.match(html, /Experience/);
   assert.doesNotMatch(html, /react-loading-skeleton|codex-preview/);
 });
@@ -54,11 +54,14 @@ test("keeps portfolio content easy to edit", async () => {
   ]);
 
   assert.match(data, /export const portfolio/);
+  assert.match(data, /name: "Ariza"/);
   assert.match(data, /languages:/);
   assert.match(data, /Saya membangun interface web/);
   assert.match(data, /experience:/);
   assert.match(data, /projects:/);
+  assert.match(data, /projectLog:/);
   assert.match(page, /content\.projects\.items\.map/);
+  assert.match(page, /content\.projects\.projectLog\.items\.map/);
   assert.match(page, /content\.experience\.items\.map/);
   assert.match(page, /useState<Language>\("en"\)/);
   assert.match(page, /IntersectionObserver/);

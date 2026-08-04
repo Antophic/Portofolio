@@ -1,6 +1,6 @@
-# Antophic Portfolio
+# Ariza Portfolio
 
-Website portofolio personal untuk Antophic dengan struktur monorepo. Aplikasi
+Website portofolio personal untuk Ariza dengan struktur monorepo. Aplikasi
 web, konten portfolio, dan konfigurasi utama dipisah supaya lebih rapi dan
 gampang dikembangkan.
 
@@ -28,6 +28,7 @@ Edit file `packages/portfolio-content/src/index.ts` untuk mengganti:
 - daftar kelebihan
 - daftar skill
 - daftar project
+- project log untuk menampilkan project yang sedang/pernah dikerjakan
 - alur kerja
 
 Layout dan style utama ada di:

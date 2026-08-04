@@ -1,11 +1,11 @@
 export const portfolio = {
-  name: "Antophic",
+  name: "Ariza",
   role: "Frontend Developer",
   specialty: "UI Engineering & Responsive Web",
   location: "Indonesia",
   avatar: "https://avatars.githubusercontent.com/u/245324916?v=4",
   description:
-    "Antophic is a frontend developer focused on accessible, polished, and maintainable web interfaces.",
+    "Ariza is a frontend developer focused on accessible, polished, and maintainable web interfaces.",
   contact: {
     email: "newcastlezzz900@gmail.com",
     href: "mailto:newcastlezzz900@gmail.com",
@@ -96,37 +96,71 @@ export const portfolio = {
       },
       projects: {
         kicker: "Projects",
-        title: "Selected work with a clear purpose.",
-        body: "Each project is framed around the problem, the interface decision, and the result it should create.",
+        title: "Projects I have worked on.",
+        body: "A dedicated place for personal builds, client websites, experiments, and every project that deserves to be presented clearly.",
         items: [
           {
-            title: "PulseBoard",
-            type: "Dashboard UI",
+            title: "Ariza Portfolio",
+            type: "Personal Website",
             year: "2026",
             summary:
-              "A compact progress dashboard designed for fast scanning, calm status indicators, and clear priority decisions.",
-            result: "Sharper visibility across active work.",
-            tags: ["React", "Data UI", "Responsive"],
+              "A bilingual portfolio website with a monorepo structure, scroll interactions, polished dark visuals, and content that stays easy to update.",
+            result: "A professional home for profile, skills, projects, and contact.",
+            tags: ["Next.js", "TypeScript", "Monorepo"],
           },
           {
-            title: "Nusa Landing System",
-            type: "Landing Page",
+            title: "Pustaka Banua Raya Website",
+            type: "Business Website",
             year: "2026",
             summary:
-              "A modular landing page structure for digital products with flexible copy sections and focused calls to action.",
-            result: "Easier to adjust messaging without breaking layout.",
-            tags: ["Next.js", "Copy Structure", "Layout"],
+              "A website foundation for a business domain, prepared so the brand can have a cleaner public presence and room to grow.",
+            result: "Clearer digital presence for a real-world business project.",
+            tags: ["Domain Setup", "Web Presence", "Hosting"],
           },
           {
-            title: "Repo Cleanup Kit",
-            type: "Developer Handoff",
+            title: "Project Showcase System",
+            type: "Portfolio Feature",
             year: "2026",
             summary:
-              "A repository setup pattern with separated content, concise docs, and predictable scripts for future edits.",
-            result: "Cleaner maintenance and faster continuation.",
-            tags: ["GitHub", "Docs", "Maintenance"],
+              "A structured project section built around title, category, status, role, summary, result, and stack so future work can be added neatly.",
+            result: "A cleaner place to document everything I build next.",
+            tags: ["Content Data", "Project Log", "Case Study"],
           },
         ],
+        projectLog: {
+          kicker: "Project Log",
+          title: "A clear place for every project I add next.",
+          body: "Each entry can show the project name, role, current status, short context, and the tools used.",
+          items: [
+            {
+              name: "Ariza Portfolio",
+              category: "Personal Portfolio",
+              status: "Live",
+              role: "Design + Frontend",
+              summary:
+                "A professional portfolio website with English and Indonesian copy, responsive layout, project sections, GitHub profile image, and polished scroll effects.",
+              stack: ["Next.js", "React", "TypeScript", "CSS"],
+            },
+            {
+              name: "Pustaka Banua Raya Website",
+              category: "Business Website",
+              status: "Planning",
+              role: "Website Setup",
+              summary:
+                "A business website project prepared around domain setup, hosting decisions, and a cleaner public-facing structure.",
+              stack: ["Domain", "Hosting", "Website Structure"],
+            },
+            {
+              name: "Next Project Slot",
+              category: "Open Entry",
+              status: "Ready",
+              role: "Project Documentation",
+              summary:
+                "A reserved entry for the next project, ready to be replaced with real work, links, stack, and a short result.",
+              stack: ["Project Notes", "Case Study", "Links"],
+            },
+          ],
+        },
       },
       skills: {
         kicker: "Skills",
@@ -255,37 +289,71 @@ export const portfolio = {
       },
       projects: {
         kicker: "Proyek",
-        title: "Karya pilihan dengan tujuan yang jelas.",
-        body: "Setiap project ditampilkan dari masalah, keputusan interface, dan hasil yang ingin dicapai.",
+        title: "Project yang pernah saya kerjakan.",
+        body: "Tempat khusus untuk menampilkan personal build, website klien, eksperimen, dan setiap project yang perlu dipresentasikan dengan jelas.",
         items: [
           {
-            title: "PulseBoard",
-            type: "Dashboard UI",
+            title: "Ariza Portfolio",
+            type: "Website Pribadi",
             year: "2026",
             summary:
-              "Dashboard progress ringkas untuk scanning cepat, indikator status yang tenang, dan keputusan prioritas yang jelas.",
-            result: "Visibilitas kerja aktif jadi lebih tajam.",
-            tags: ["React", "Data UI", "Responsive"],
+              "Website portfolio bilingual dengan struktur monorepo, efek scroll, visual dark yang rapi, dan konten yang mudah diperbarui.",
+            result: "Rumah profesional untuk profil, skill, project, dan kontak.",
+            tags: ["Next.js", "TypeScript", "Monorepo"],
           },
           {
-            title: "Nusa Landing System",
-            type: "Landing Page",
+            title: "Pustaka Banua Raya Website",
+            type: "Website Bisnis",
             year: "2026",
             summary:
-              "Struktur landing page modular untuk produk digital dengan section copy fleksibel dan call to action yang fokus.",
-            result: "Messaging mudah diubah tanpa merusak layout.",
-            tags: ["Next.js", "Copy Structure", "Layout"],
+              "Fondasi website untuk domain bisnis, disiapkan supaya brand punya tampilan publik yang lebih bersih dan bisa dikembangkan.",
+            result: "Digital presence yang lebih jelas untuk project bisnis nyata.",
+            tags: ["Domain Setup", "Web Presence", "Hosting"],
           },
           {
-            title: "Repo Cleanup Kit",
-            type: "Developer Handoff",
+            title: "Project Showcase System",
+            type: "Fitur Portfolio",
             year: "2026",
             summary:
-              "Pola setup repository dengan konten terpisah, dokumentasi ringkas, dan script yang mudah dipakai untuk edit berikutnya.",
-            result: "Maintenance lebih bersih dan mudah dilanjutkan.",
-            tags: ["GitHub", "Docs", "Maintenance"],
+              "Section project yang dibuat terstruktur dengan judul, kategori, status, role, ringkasan, hasil, dan stack agar project berikutnya mudah ditambahkan.",
+            result: "Tempat yang lebih rapi untuk mendokumentasikan semua karya berikutnya.",
+            tags: ["Content Data", "Project Log", "Case Study"],
           },
         ],
+        projectLog: {
+          kicker: "Project Log",
+          title: "Tempat jelas untuk setiap project yang saya tambahkan.",
+          body: "Setiap entry bisa menampilkan nama project, role, status, konteks singkat, dan tools yang digunakan.",
+          items: [
+            {
+              name: "Ariza Portfolio",
+              category: "Portfolio Pribadi",
+              status: "Live",
+              role: "Design + Frontend",
+              summary:
+                "Website portfolio profesional dengan copy English dan Indonesia, layout responsif, section project, foto profil GitHub, dan efek scroll yang halus.",
+              stack: ["Next.js", "React", "TypeScript", "CSS"],
+            },
+            {
+              name: "Pustaka Banua Raya Website",
+              category: "Website Bisnis",
+              status: "Planning",
+              role: "Website Setup",
+              summary:
+                "Project website bisnis yang disiapkan dari domain, keputusan hosting, dan struktur tampilan publik yang lebih rapi.",
+              stack: ["Domain", "Hosting", "Website Structure"],
+            },
+            {
+              name: "Next Project Slot",
+              category: "Entry Terbuka",
+              status: "Ready",
+              role: "Project Documentation",
+              summary:
+                "Slot untuk project berikutnya, siap diganti dengan karya nyata, link, stack, dan hasil singkat.",
+              stack: ["Project Notes", "Case Study", "Links"],
+            },
+          ],
+        },
       },
       skills: {
         kicker: "Skill",
