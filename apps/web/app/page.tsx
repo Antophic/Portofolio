@@ -15,6 +15,7 @@ export default function Home() {
     { id: "about", label: content.nav.about },
     { id: "experience", label: content.nav.experience },
     { id: "projects", label: content.nav.projects },
+    { id: "publications", label: content.nav.publications },
     { id: "contact", label: content.nav.contact },
   ];
 
@@ -43,7 +44,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const sections = ["about", "experience", "projects", "contact"]
+    const sections = ["about", "experience", "projects", "publications", "contact"]
       .map((id) => document.getElementById(id))
       .filter((section): section is HTMLElement => Boolean(section));
 
@@ -384,6 +385,83 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section publication-section" id="publications">
+        <div className="section-heading section-heading-row" data-reveal>
+          <div>
+            <p className="section-kicker">{content.publications.kicker}</p>
+            <h2>{content.publications.title}</h2>
+          </div>
+          <p>{content.publications.body}</p>
+        </div>
+
+        <div className="publication-list">
+          {content.publications.items.map((publication, index) => (
+            <article
+              className="publication-card"
+              data-reveal
+              key={publication.title}
+              style={{ transitionDelay: `${index * 90}ms` }}
+            >
+              <figure className="publication-cover">
+                <Image
+                  alt={publication.image.alt}
+                  className="publication-image"
+                  fill
+                  sizes="(max-width: 920px) 100vw, 260px"
+                  src={publication.image.src}
+                  unoptimized
+                />
+              </figure>
+
+              <div className="publication-copy">
+                <div className="project-meta">
+                  <span>{publication.type}</span>
+                  <span>{publication.year}</span>
+                </div>
+                <h3>{publication.title}</h3>
+                <p className="publication-subtitle">{publication.subtitle}</p>
+                <p>{publication.summary}</p>
+
+                <dl className="publication-facts">
+                  <div>
+                    <dt>{content.publications.labels.isbn}</dt>
+                    <dd>{publication.isbn}</dd>
+                  </div>
+                  <div>
+                    <dt>{content.publications.labels.publisher}</dt>
+                    <dd>{publication.publisher}</dd>
+                  </div>
+                  <div>
+                    <dt>{content.publications.labels.location}</dt>
+                    <dd>{publication.location}</dd>
+                  </div>
+                  <div>
+                    <dt>{content.publications.labels.authors}</dt>
+                    <dd>{publication.authors.join(", ")}</dd>
+                  </div>
+                </dl>
+
+                <div className="tag-list">
+                  {publication.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+
+                <a
+                  className="publication-source"
+                  href={publication.sourceHref}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {publication.sourceLabel}
+                  <span aria-hidden="true">-&gt;</span>
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

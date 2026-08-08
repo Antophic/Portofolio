@@ -37,14 +37,18 @@ test("server-renders the Ariza portfolio", async () => {
   assert.match(html, />ID</);
   assert.match(html, /Project Log/);
   assert.match(html, /Pustaka Banua Raya Website/);
+  assert.match(html, /Publications/);
+  assert.match(html, /Model Efektivitas Pemberdayaan Kelompok/);
+  assert.match(html, /9786021585122/);
   assert.match(html, /\/projects\/ariza-portfolio\.svg/);
   assert.match(html, /\/projects\/pustaka-banua-raya\.svg/);
+  assert.match(html, /\/publications\/model-efektivitas-pemberdayaan-kelompok\.jpeg/);
   assert.match(html, /Experience/);
   assert.doesNotMatch(html, /react-loading-skeleton|codex-preview/);
 });
 
 test("keeps portfolio content easy to edit", async () => {
-  const [data, page, layout, packageJson, files, projectImages] = await Promise.all([
+  const [data, page, layout, packageJson, files, projectImages, publicationImages] = await Promise.all([
     readFile(
       new URL("../../../packages/portfolio-content/src/index.ts", import.meta.url),
       "utf8",
@@ -54,6 +58,7 @@ test("keeps portfolio content easy to edit", async () => {
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     readdir(new URL("../app/", import.meta.url)),
     readdir(new URL("../public/projects/", import.meta.url)),
+    readdir(new URL("../public/publications/", import.meta.url)),
   ]);
 
   assert.match(data, /export const portfolio/);
@@ -63,11 +68,15 @@ test("keeps portfolio content easy to edit", async () => {
   assert.match(data, /experience:/);
   assert.match(data, /projects:/);
   assert.match(data, /projectLog:/);
+  assert.match(data, /publications:/);
+  assert.match(data, /isbn: "9786021585122"/);
   assert.match(data, /image:/);
   assert.match(page, /content\.projects\.items\.map/);
   assert.match(page, /content\.projects\.projectLog\.items\.map/);
+  assert.match(page, /content\.publications\.items\.map/);
   assert.match(page, /project\.image\.src/);
   assert.match(page, /project-log-thumb/);
+  assert.match(page, /publication-cover/);
   assert.match(page, /content\.experience\.items\.map/);
   assert.match(page, /useState<Language>\("en"\)/);
   assert.match(page, /IntersectionObserver/);
@@ -82,5 +91,8 @@ test("keeps portfolio content easy to edit", async () => {
     "ariza-portfolio.svg",
     "project-showcase.svg",
     "pustaka-banua-raya.svg",
+  ]);
+  assert.deepEqual(publicationImages.sort(), [
+    "model-efektivitas-pemberdayaan-kelompok.jpeg",
   ]);
 });
