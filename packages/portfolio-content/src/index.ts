@@ -22,7 +22,6 @@ export const portfolio = {
         about: "About",
         experience: "Experience",
         projects: "Projects",
-        publications: "Publications",
         contact: "Contact",
       },
       eyebrow: "Frontend portfolio",
@@ -187,43 +186,6 @@ export const portfolio = {
           ],
         },
       },
-      publications: {
-        kicker: "Publications",
-        title: "Published works and book records.",
-        body: "A curated record of books and formal publications with verified publication metadata.",
-        labels: {
-          authors: "Authors",
-          isbn: "ISBN",
-          publisher: "Publisher",
-          location: "Place",
-        },
-        items: [
-          {
-            title: "Model Efektivitas Pemberdayaan Kelompok",
-            subtitle:
-              "Studi Model Pemberdayaan Kelompok Pengolah Hasil Perikanan di Kota Banjarmasin",
-            type: "Reference Book",
-            year: "2021",
-            isbn: "9786021585122",
-            location: "Banjarmasin",
-            publisher: "CV Pustaka Banua Raya",
-            authors: [
-              "Muhammad Riduansyah Syafari",
-              "Trisylvana Azwari",
-              "Siti Juwairiyah",
-            ],
-            summary:
-              "A reference book about the effectiveness model for empowering processed fishery product groups in Banjarmasin.",
-            tags: ["Community Empowerment", "Fishery Groups", "Banjarmasin"],
-            sourceLabel: "SINTA record",
-            sourceHref: "https://sinta.kemdiktisaintek.go.id/authors/profile/6685274/?view=books",
-            image: {
-              src: "/publications/model-efektivitas-pemberdayaan-kelompok.jpeg",
-              alt: "Book cover for Model Efektivitas Pemberdayaan Kelompok",
-            },
-          },
-        ],
-      },
       skills: {
         kicker: "Skills",
         title: "Tools and habits behind the work.",
@@ -277,7 +239,6 @@ export const portfolio = {
         about: "Tentang",
         experience: "Pengalaman",
         projects: "Proyek",
-        publications: "Publikasi",
         contact: "Kontak",
       },
       eyebrow: "Portofolio frontend",
@@ -441,43 +402,6 @@ export const portfolio = {
             },
           ],
         },
-      },
-      publications: {
-        kicker: "Publikasi",
-        title: "Karya terbit dan catatan buku.",
-        body: "Daftar buku dan publikasi formal dengan metadata terbit yang sudah dicek.",
-        labels: {
-          authors: "Penulis",
-          isbn: "ISBN",
-          publisher: "Penerbit",
-          location: "Tempat",
-        },
-        items: [
-          {
-            title: "Model Efektivitas Pemberdayaan Kelompok",
-            subtitle:
-              "Studi Model Pemberdayaan Kelompok Pengolah Hasil Perikanan di Kota Banjarmasin",
-            type: "Buku Referensi",
-            year: "2021",
-            isbn: "9786021585122",
-            location: "Banjarmasin",
-            publisher: "CV Pustaka Banua Raya",
-            authors: [
-              "Muhammad Riduansyah Syafari",
-              "Trisylvana Azwari",
-              "Siti Juwairiyah",
-            ],
-            summary:
-              "Buku referensi tentang model efektivitas pemberdayaan kelompok pengolah hasil perikanan di Kota Banjarmasin.",
-            tags: ["Pemberdayaan Masyarakat", "Kelompok Perikanan", "Banjarmasin"],
-            sourceLabel: "Catatan SINTA",
-            sourceHref: "https://sinta.kemdiktisaintek.go.id/authors/profile/6685274/?view=books",
-            image: {
-              src: "/publications/model-efektivitas-pemberdayaan-kelompok.jpeg",
-              alt: "Sampul buku Model Efektivitas Pemberdayaan Kelompok",
-            },
-          },
-        ],
       },
       skills: {
         kicker: "Skill",
