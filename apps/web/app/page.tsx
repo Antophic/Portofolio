@@ -106,14 +106,7 @@ export default function Home() {
       <header className={scrollProgress > 0.02 ? "topbar is-scrolled" : "topbar"} id="home">
         <a className="brand-lockup" href="#home" aria-label={`${portfolio.name} home`}>
           <span className="brand-mark" aria-hidden="true">
-            <Image
-              alt=""
-              className="brand-avatar"
-              height={44}
-              src={portfolio.avatar}
-              unoptimized
-              width={44}
-            />
+            <span className="brand-initials">AN</span>
           </span>
           <span>
             <strong>{portfolio.name}</strong>
@@ -176,14 +169,9 @@ export default function Home() {
           style={{ transitionDelay: "90ms" }}
         >
           <div className="profile-head">
-            <Image
-              alt={`Profile avatar for ${portfolio.name}`}
-              className="profile-avatar"
-              height={96}
-              src={portfolio.avatar}
-              unoptimized
-              width={96}
-            />
+            <span className="profile-monogram" aria-hidden="true">
+              AN
+            </span>
             <div>
               <span>{content.status}</span>
               <h2>{portfolio.name}</h2>
@@ -247,38 +235,44 @@ export default function Home() {
         </div>
 
         <div className="experience-list">
-          {content.experience.items.map((item, index) => (
-            <article
-              className="experience-item"
-              data-reveal="right"
-              key={`${item.period}-${item.role}`}
-              style={{ transitionDelay: `${index * 85}ms` }}
-            >
-              <div className="item-period">{item.period}</div>
-              <figure className="experience-visual">
-                <Image
-                  alt={item.image.alt}
-                  className="experience-image"
-                  height={108}
-                  src={item.image.src}
-                  unoptimized
-                  width={108}
-                />
-              </figure>
-              <div>
-                <h3>
-                  {item.role}
-                  <span>{item.company}</span>
-                </h3>
-                <p>{item.summary}</p>
-                <div className="tag-list">
-                  {item.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
+          {content.experience.items.map((item, index) => {
+            const image = "image" in item ? item.image : null;
+
+            return (
+              <article
+                className={image ? "experience-item has-visual" : "experience-item"}
+                data-reveal="right"
+                key={`${item.period}-${item.role}`}
+                style={{ transitionDelay: `${index * 85}ms` }}
+              >
+                <div className="item-period">{item.period}</div>
+                {image ? (
+                  <figure className="experience-visual">
+                    <Image
+                      alt={image.alt}
+                      className="experience-image"
+                      height={108}
+                      src={image.src}
+                      unoptimized
+                      width={108}
+                    />
+                  </figure>
+                ) : null}
+                <div>
+                  <h3>
+                    {item.role}
+                    <span>{item.company}</span>
+                  </h3>
+                  <p>{item.summary}</p>
+                  <div className="tag-list">
+                    {item.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </section>
 

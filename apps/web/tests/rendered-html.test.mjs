@@ -42,17 +42,15 @@ test("server-renders the Ariza portfolio", async () => {
   assert.match(html, /Projects from my LinkedIn profile/);
   assert.match(html, /ServiceFlow/);
   assert.match(html, /Mini CRM/);
-  assert.match(html, /AI Business Assistant/);
   assert.match(html, /service-booking-management-system\.vercel\.app/);
   assert.match(html, /mini-crm-opal-two\.vercel\.app/);
-  assert.match(html, /ai-bisnis\.vercel\.app/);
   assert.match(html, /\/projects\/serviceflow-dashboard\.webp/);
   assert.match(html, /\/projects\/mini-crm-dashboard\.webp/);
-  assert.match(html, /\/projects\/ai-business-assistant\.png/);
   assert.doesNotMatch(
     html,
-    /Ariza Portfolio|Only confirmed public work|Verified public work|Pustaka Banua Raya|Project Log|Next Project Slot|Project Showcase System/,
+    /AI Business Assistant|ai-bisnis|ai-business-assistant|Ariza Portfolio|Only confirmed public work|Verified public work|Pustaka Banua Raya|Project Log|Next Project Slot|Project Showcase System/,
   );
+  assert.doesNotMatch(html, /avatars\.githubusercontent\.com\/u\/245324916/);
   assert.match(html, /\/profile\/uniska-logo\.png/);
   assert.match(html, /Profile/);
   assert.doesNotMatch(html, /react-loading-skeleton|codex-preview/);
@@ -82,16 +80,15 @@ test("keeps portfolio content easy to edit", async () => {
   assert.match(data, /projects:/);
   assert.match(data, /ServiceFlow/);
   assert.match(data, /Mini CRM/);
-  assert.match(data, /AI Business Assistant/);
   assert.match(data, /https:\/\/github\.com\/Antophic\/Mini-CRM/);
   assert.match(data, /https:\/\/github\.com\/Antophic\/SERVICE-BOOKING-MANAGEMENT-SYSTEM/);
-  assert.match(data, /https:\/\/github\.com\/Antophic\/ai-bisnis/);
   assert.match(data, /profileLinkLabel:/);
   assert.match(data, /\/profile\/uniska-logo\.png/);
   assert.doesNotMatch(
     data,
-    /Ariza Portfolio|Only confirmed public work|Verified public work|Pustaka Banua Raya|projectLog:|Next Project Slot|Project Showcase System|strengths:|process:/,
+    /AI Business Assistant|ai-bisnis|ai-business-assistant|Ariza Portfolio|Only confirmed public work|Verified public work|Pustaka Banua Raya|projectLog:|Next Project Slot|Project Showcase System|strengths:|process:/,
   );
+  assert.doesNotMatch(data, /avatars\.githubusercontent\.com\/u\/245324916/);
   assert.match(data, /image:/);
   assert.match(page, /content\.projects\.items\.map/);
   assert.doesNotMatch(page, /content\.projects\.projectLog/);
@@ -101,18 +98,20 @@ test("keeps portfolio content easy to edit", async () => {
   assert.doesNotMatch(page, /project-log-thumb/);
   assert.match(page, /content\.experience\.items\.map/);
   assert.match(page, /experience-visual/);
-  assert.match(page, /item\.image\.src/);
+  assert.match(page, /"image" in item/);
+  assert.match(page, /image\.src/);
   assert.match(page, /useState<Language>\("en"\)/);
   assert.match(page, /IntersectionObserver/);
   assert.match(page, /scroll-progress/);
   assert.match(page, /data-reveal/);
-  assert.match(page, /className="brand-avatar"/);
+  assert.match(page, /className="brand-initials"/);
+  assert.match(page, /className="profile-monogram"/);
+  assert.doesNotMatch(page, /brand-avatar|profile-avatar/);
   assert.doesNotMatch(page, /portfolio\.initials/);
   assert.match(layout, /generateMetadata/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.ok(!files.includes("_sites-preview"));
   assert.deepEqual(projectImages.sort(), [
-    "ai-business-assistant.png",
     "mini-crm-dashboard.webp",
     "serviceflow-dashboard.webp",
   ]);

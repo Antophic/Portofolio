@@ -3,7 +3,6 @@ export const portfolio = {
   role: "Full-Stack Web Developer",
   specialty: "React, TypeScript, Node.js | Business Web Apps",
   location: "Banjarbaru, Indonesia",
-  avatar: "https://avatars.githubusercontent.com/u/245324916?v=4",
   description:
     "LinkedIn-aligned portfolio profile for Ariza Naufal Kholish, a full-stack web developer focused on React, TypeScript, Node.js, and business web apps.",
   contact: {
@@ -40,7 +39,7 @@ export const portfolio = {
         stackLabel: "Core stack",
       },
       stats: [
-        { value: "03", label: "LinkedIn projects" },
+        { value: "02", label: "LinkedIn projects" },
         { value: "FS", label: "Full-stack web development" },
         { value: "UI", label: "Responsive web interfaces" },
       ],
@@ -49,7 +48,7 @@ export const portfolio = {
         title: "I build practical web apps around business workflows.",
         paragraphs: [
           "My LinkedIn profile positions me as a Full-Stack Web Developer focused on React, TypeScript, Node.js, and Business Web Apps.",
-          "The project section keeps the LinkedIn projects visible and removes only placeholder or self-referential cards that were not meant to be shown as portfolio work.",
+          "This portfolio focuses on public projects connected to my profile, with clear live links and source repositories.",
         ],
       },
       experience: {
@@ -63,10 +62,6 @@ export const portfolio = {
             summary:
               "Builds responsive business web applications with React, TypeScript, Node.js, clean UI structure, and deployment-ready project workflows.",
             tags: ["React", "TypeScript", "Node.js", "Business Web Apps"],
-            image: {
-              src: "https://avatars.githubusercontent.com/u/245324916?v=4",
-              alt: "Profile image for Ariza Naufal Kholish",
-            },
           },
           {
             period: "Education",
@@ -124,23 +119,6 @@ export const portfolio = {
               alt: "Dashboard screenshot for the Mini CRM project",
             },
           },
-          {
-            title: "AI Business Assistant",
-            type: "AI Lead Capture App",
-            year: "2026",
-            summary:
-              "A business website demo with an AI chat assistant that answers customer questions, detects lead intent, and captures qualified leads for follow-up.",
-            result: "A lead-generation workflow combining a product landing page, AI chat API, validation, and dashboard-ready lead data.",
-            tags: ["Next.js", "TypeScript", "OpenAI API", "Supabase"],
-            links: [
-              { label: "Live", href: "https://ai-bisnis.vercel.app" },
-              { label: "Repo", href: "https://github.com/Antophic/ai-bisnis" },
-            ],
-            image: {
-              src: "/projects/ai-business-assistant.png",
-              alt: "Landing page screenshot for the AI Business Assistant project",
-            },
-          },
         ],
       },
       skills: {
@@ -192,7 +170,7 @@ export const portfolio = {
         stackLabel: "Stack utama",
       },
       stats: [
-        { value: "03", label: "Project LinkedIn" },
+        { value: "02", label: "Project LinkedIn" },
         { value: "FS", label: "Full-stack web development" },
         { value: "UI", label: "Interface web responsif" },
       ],
@@ -201,7 +179,7 @@ export const portfolio = {
         title: "Saya membangun web app praktis dari workflow bisnis.",
         paragraphs: [
           "Profil LinkedIn saya menempatkan saya sebagai Full-Stack Web Developer yang fokus pada React, TypeScript, Node.js, dan Business Web Apps.",
-          "Bagian project tetap menampilkan project LinkedIn, dan yang dihapus hanya card placeholder atau self-referential yang tidak perlu ditampilkan sebagai karya portfolio.",
+          "Portfolio ini difokuskan pada project publik yang terhubung ke profil saya, lengkap dengan link live dan repository.",
         ],
       },
       experience: {
@@ -215,10 +193,6 @@ export const portfolio = {
             summary:
               "Membangun business web applications yang responsif dengan React, TypeScript, Node.js, struktur UI rapi, dan workflow project yang siap deploy.",
             tags: ["React", "TypeScript", "Node.js", "Business Web Apps"],
-            image: {
-              src: "https://avatars.githubusercontent.com/u/245324916?v=4",
-              alt: "Gambar profil Ariza Naufal Kholish",
-            },
           },
           {
             period: "Pendidikan",
@@ -274,23 +248,6 @@ export const portfolio = {
             image: {
               src: "/projects/mini-crm-dashboard.webp",
               alt: "Screenshot dashboard untuk project Mini CRM",
-            },
-          },
-          {
-            title: "AI Business Assistant",
-            type: "Aplikasi AI Lead Capture",
-            year: "2026",
-            summary:
-              "Demo website bisnis dengan AI chat assistant yang menjawab pertanyaan customer, mendeteksi intent lead, dan menangkap lead untuk follow-up.",
-            result: "Workflow lead generation yang menggabungkan landing page produk, AI chat API, validasi, dan data lead siap dashboard.",
-            tags: ["Next.js", "TypeScript", "OpenAI API", "Supabase"],
-            links: [
-              { label: "Live", href: "https://ai-bisnis.vercel.app" },
-              { label: "Repo", href: "https://github.com/Antophic/ai-bisnis" },
-            ],
-            image: {
-              src: "/projects/ai-business-assistant.png",
-              alt: "Screenshot landing page untuk project AI Business Assistant",
             },
           },
         ],

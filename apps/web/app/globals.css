@@ -125,10 +125,15 @@ a {
   width: 44px;
 }
 
-.brand-avatar {
-  display: block;
+.brand-initials {
+  align-items: center;
+  color: var(--accent);
+  display: inline-flex;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.92rem;
+  font-weight: 900;
   height: 100%;
-  object-fit: cover;
+  justify-content: center;
   width: 100%;
 }
 
@@ -374,12 +379,20 @@ h3 {
   grid-template-columns: 82px 1fr;
 }
 
-.profile-avatar {
+.profile-monogram {
+  align-items: center;
+  background:
+    linear-gradient(145deg, rgba(123, 224, 195, 0.16), rgba(240, 217, 167, 0.12)),
+    var(--surface-strong);
   border: 1px solid rgba(123, 224, 195, 0.28);
   border-radius: 8px;
-  display: block;
+  color: var(--accent);
+  display: inline-flex;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 1.4rem;
+  font-weight: 900;
   height: 82px;
-  object-fit: cover;
+  justify-content: center;
   width: 82px;
 }
 
@@ -565,7 +578,7 @@ h3 {
   border-radius: 8px;
   display: grid;
   gap: 24px;
-  grid-template-columns: 120px 108px 1fr;
+  grid-template-columns: 120px 1fr;
   padding: 24px;
   transition:
     background 160ms ease,
@@ -577,6 +590,10 @@ h3 {
   background: rgba(255, 255, 255, 0.035);
   border-color: var(--line);
   transform: translateY(-2px);
+}
+
+.experience-item.has-visual {
+  grid-template-columns: 120px 108px 1fr;
 }
 
 .experience-visual {
@@ -828,6 +845,7 @@ h3 {
   }
 
   .experience-item,
+  .experience-item.has-visual,
   .project-card {
     grid-template-columns: 1fr;
   }
