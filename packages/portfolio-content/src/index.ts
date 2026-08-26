@@ -1,11 +1,11 @@
 export const portfolio = {
   name: "Ariza Naufal Kholish",
   role: "Full-Stack Web Developer",
-  specialty: "React, TypeScript & Node.js",
+  specialty: "React, TypeScript, Node.js | Business Web Apps",
   location: "Banjarbaru, Indonesia",
   avatar: "https://avatars.githubusercontent.com/u/245324916?v=4",
   description:
-    "Ariza Naufal Kholish is a full-stack web developer building business web apps with React, TypeScript, Node.js, and modern deployment workflows.",
+    "LinkedIn-aligned portfolio profile for Ariza Naufal Kholish, a full-stack web developer focused on React, TypeScript, Node.js, and business web apps.",
   contact: {
     email: "newcastlezzz900@gmail.com",
     href: "mailto:newcastlezzz900@gmail.com",
@@ -22,152 +22,86 @@ export const portfolio = {
       nav: {
         about: "About",
         experience: "Profile",
-        projects: "Projects",
+        projects: "Work",
         contact: "Contact",
       },
-      eyebrow: "Full-stack portfolio",
-      headline: "Full-stack web developer for practical business web apps.",
+      eyebrow: "LinkedIn profile",
+      headline: "Full-Stack Web Developer focused on business web apps.",
       subheadline:
-        "I build responsive products with React, TypeScript, Node.js, and database-backed workflows, including CRM, service booking, AI assistant, and portfolio projects.",
+        "React, TypeScript, and Node.js developer based in Banjarbaru, building responsive web experiences for practical business needs.",
       contactLabel: "Get in touch",
-      resumeLabel: "View projects",
+      resumeLabel: "View work",
+      profileLinkLabel: "Open LinkedIn profile",
       status: "Self Employed",
-      statusNote: "React, TypeScript, Node.js | Business Web Apps",
+      statusNote: "Full-Stack Web Developer | React, TypeScript, Node.js | Business Web Apps",
       profile: {
         locationLabel: "Location",
-        focusLabel: "Focus",
+        focusLabel: "LinkedIn headline",
         stackLabel: "Core stack",
       },
       stats: [
-        { value: "03", label: "Live business projects" },
-        { value: "FS", label: "Full-stack implementation" },
-        { value: "UI", label: "Responsive product interfaces" },
+        { value: "01", label: "Verified public portfolio" },
+        { value: "FS", label: "Full-stack web development" },
+        { value: "UI", label: "Responsive web interfaces" },
       ],
       about: {
         kicker: "About",
-        title: "I build practical web apps backed by real product workflows.",
+        title: "Profile based on my public LinkedIn identity.",
         paragraphs: [
-          "My current profile is full-stack web development for business applications. I work across frontend, backend, authentication, database flow, and deployment so each project can be tried as a working product.",
-          "Recent projects include ServiceFlow for service booking operations, Mini CRM for sales pipeline management, and AI Business Assistant for AI-powered lead capture.",
+          "My public profile positions me as a Full-Stack Web Developer focused on React, TypeScript, Node.js, and Business Web Apps.",
+          "This website now only shows verified public work, so the portfolio stays accurate and does not include placeholder projects.",
         ],
       },
-      strengths: [
-        {
-          title: "Full-stack build",
-          body: "Comfortable shaping interfaces, data flow, and application logic into one usable web product.",
-        },
-        {
-          title: "Business focus",
-          body: "Projects are built around actual workflows, clear information, and pages that support a practical goal.",
-        },
-        {
-          title: "Responsive interface",
-          body: "Layouts are prepared for desktop and mobile so the experience stays readable and stable.",
-        },
-      ],
       experience: {
         kicker: "Profile",
-        title: "Current profile, work focus, and education.",
+        title: "Current profile, focus, and education.",
         items: [
           {
             period: "Current",
             role: "Full-Stack Web Developer",
             company: "Self Employed",
             summary:
-              "Builds business web apps with React, TypeScript, Node.js, authentication, APIs, database models, and live deployment workflows.",
-            tags: ["React", "TypeScript", "Node.js", "Prisma", "Business Web Apps"],
+              "Builds responsive business web applications with React, TypeScript, Node.js, clean UI structure, and deployment-ready project workflows.",
+            tags: ["React", "TypeScript", "Node.js", "Business Web Apps"],
           },
           {
             period: "Education",
             role: "Student",
             company: "Universitas Islam Kalimantan Muhammad Arsyad Al Banjari",
             summary:
-              "Studies at UNISKA MAB while developing practical web projects and strengthening software development fundamentals.",
+              "Studies at UNISKA MAB while strengthening software development fundamentals and practical web development skills.",
             tags: ["UNISKA MAB", "Web Development", "Software Fundamentals"],
           },
         ],
       },
       projects: {
-        kicker: "Projects",
-        title: "Selected work from my current developer profile.",
-        body: "Live projects connected to my public GitHub and LinkedIn-facing full-stack web developer profile.",
+        kicker: "Work",
+        title: "Verified public work.",
+        body: "Only confirmed public work is shown here.",
         items: [
           {
             title: "Ariza Portfolio",
             type: "Personal Website",
             year: "2026",
             summary:
-              "A bilingual portfolio website for presenting profile, skills, projects, and contact information in one clean responsive page.",
-            result: "A personal web presence aligned with the current LinkedIn profile.",
+              "A bilingual portfolio website for presenting a LinkedIn-aligned profile, skills, selected work, and contact details in one responsive page.",
+            result: "A personal web presence connected to the current LinkedIn profile.",
             tags: ["Next.js", "React", "TypeScript"],
             links: [
-              { label: "Live", href: "https://portofolio-arizanaufalkholish.vercel.app" },
+              { label: "Live", href: "https://portofolio-arizanaufalkholish-six.vercel.app" },
               { label: "Repo", href: "https://github.com/Antophic/Portofolio" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/ariza-naufal-kholish-1557772a5/" },
             ],
             image: {
               src: "/projects/ariza-portfolio.svg",
               alt: "Preview image for the Ariza Portfolio project",
             },
           },
-          {
-            title: "ServiceFlow",
-            type: "Booking Management App",
-            year: "2026",
-            summary:
-              "A full-stack booking and job management system for service businesses, covering public booking intake, admin review, staff assignment, scheduling, and job status workflows.",
-            result: "A database-backed operations dashboard for managing service work from request to completion.",
-            tags: ["React", "TypeScript", "Node.js", "MySQL", "Prisma"],
-            links: [
-              { label: "Live", href: "https://service-booking-management-system.vercel.app" },
-              {
-                label: "Repo",
-                href: "https://github.com/Antophic/SERVICE-BOOKING-MANAGEMENT-SYSTEM",
-              },
-            ],
-            image: {
-              src: "/projects/serviceflow-dashboard.webp",
-              alt: "Operations dashboard screenshot for the ServiceFlow project",
-            },
-          },
-          {
-            title: "Mini CRM",
-            type: "Sales Pipeline App",
-            year: "2026",
-            summary:
-              "A full-stack CRM workspace for tracking prospects, deal values, follow-ups, notes, and client activity from an authenticated dashboard.",
-            result: "A practical sales pipeline tool with role-based access, filtering, metrics, and activity history.",
-            tags: ["React", "TypeScript", "Express", "MySQL", "JWT"],
-            links: [
-              { label: "Live", href: "https://mini-crm-opal-two.vercel.app" },
-              { label: "Repo", href: "https://github.com/Antophic/Mini-CRM" },
-            ],
-            image: {
-              src: "/projects/mini-crm-dashboard.webp",
-              alt: "Dashboard screenshot for the Mini CRM project",
-            },
-          },
-          {
-            title: "AI Business Assistant",
-            type: "AI Lead Capture App",
-            year: "2026",
-            summary:
-              "A business website demo with an AI chat assistant that answers customer questions, detects lead intent, and captures qualified leads for follow-up.",
-            result: "A lead-generation workflow combining a product landing page, AI chat API, validation, and dashboard-ready lead data.",
-            tags: ["Next.js", "TypeScript", "OpenAI API", "Supabase"],
-            links: [
-              { label: "Live", href: "https://ai-bisnis.vercel.app" },
-              { label: "Repo", href: "https://github.com/Antophic/ai-bisnis" },
-            ],
-            image: {
-              src: "/projects/ai-business-assistant.png",
-              alt: "Landing page screenshot for the AI Business Assistant project",
-            },
-          },
         ],
       },
       skills: {
         kicker: "Skills",
-        title: "Tools behind the current full-stack profile.",
+        title: "Tools aligned with the LinkedIn profile.",
         groups: [
           {
             group: "Frontend",
@@ -183,31 +117,10 @@ export const portfolio = {
           },
         ],
       },
-      process: {
-        kicker: "Process",
-        title: "How I move from business need to working web app.",
-        steps: [
-          {
-            step: "01",
-            title: "Understand",
-            body: "Clarify the business goal, user flow, content, and main feature that needs to work first.",
-          },
-          {
-            step: "02",
-            title: "Build",
-            body: "Create responsive screens and application logic using React, TypeScript, and Node.js foundations.",
-          },
-          {
-            step: "03",
-            title: "Ship",
-            body: "Prepare the project for deployment, review the result, and keep the structure easy to continue.",
-          },
-        ],
-      },
       contact: {
         kicker: "Contact",
         title: "Let's build a practical web app or business website.",
-        body: "Reach out if you need a responsive website, portfolio, or business web app built with a clear full-stack workflow.",
+        body: "Reach out through email or LinkedIn for responsive websites, portfolios, and business web app work.",
         button: "Send email",
       },
     },
@@ -217,152 +130,86 @@ export const portfolio = {
       nav: {
         about: "Tentang",
         experience: "Profil",
-        projects: "Proyek",
+        projects: "Karya",
         contact: "Kontak",
       },
-      eyebrow: "Portofolio full-stack",
-      headline: "Full-stack web developer untuk aplikasi web bisnis yang praktis.",
+      eyebrow: "Profil LinkedIn",
+      headline: "Full-Stack Web Developer untuk business web apps.",
       subheadline:
-        "Saya membangun produk responsif dengan React, TypeScript, Node.js, dan workflow berbasis database, termasuk CRM, booking service, AI assistant, dan portfolio.",
+        "Developer React, TypeScript, dan Node.js berbasis di Banjarbaru yang membangun pengalaman web responsif untuk kebutuhan bisnis praktis.",
       contactLabel: "Hubungi saya",
-      resumeLabel: "Lihat proyek",
+      resumeLabel: "Lihat karya",
+      profileLinkLabel: "Buka profil LinkedIn",
       status: "Self Employed",
-      statusNote: "React, TypeScript, Node.js | Business Web Apps",
+      statusNote: "Full-Stack Web Developer | React, TypeScript, Node.js | Business Web Apps",
       profile: {
         locationLabel: "Lokasi",
-        focusLabel: "Fokus",
+        focusLabel: "Headline LinkedIn",
         stackLabel: "Stack utama",
       },
       stats: [
-        { value: "03", label: "Project bisnis live" },
-        { value: "FS", label: "Implementasi full-stack" },
-        { value: "UI", label: "Interface produk responsif" },
+        { value: "01", label: "Portfolio publik terverifikasi" },
+        { value: "FS", label: "Full-stack web development" },
+        { value: "UI", label: "Interface web responsif" },
       ],
       about: {
         kicker: "Tentang",
-        title: "Saya membangun web app praktis dari workflow produk nyata.",
+        title: "Profil berdasarkan identitas LinkedIn publik saya.",
         paragraphs: [
-          "Profil saya sekarang fokus ke full-stack web development untuk aplikasi bisnis. Saya mengerjakan frontend, backend, autentikasi, alur database, dan deployment supaya setiap project bisa dicoba sebagai produk yang berjalan.",
-          "Project terbaru saya mencakup ServiceFlow untuk operasional booking service, Mini CRM untuk sales pipeline, dan AI Business Assistant untuk lead capture berbasis AI.",
+          "Profil publik saya menempatkan saya sebagai Full-Stack Web Developer yang fokus pada React, TypeScript, Node.js, dan Business Web Apps.",
+          "Website ini sekarang hanya menampilkan karya publik yang sudah terverifikasi, jadi portofolio tetap akurat dan tidak berisi project placeholder.",
         ],
       },
-      strengths: [
-        {
-          title: "Build full-stack",
-          body: "Terbiasa menyusun interface, alur data, dan logic aplikasi menjadi satu produk web yang bisa dipakai.",
-        },
-        {
-          title: "Fokus bisnis",
-          body: "Project dibangun dari workflow nyata, informasi yang jelas, dan halaman yang mendukung tujuan praktis.",
-        },
-        {
-          title: "Interface responsif",
-          body: "Layout disiapkan untuk desktop dan mobile supaya pengalaman tetap terbaca dan stabil.",
-        },
-      ],
       experience: {
         kicker: "Profil",
-        title: "Profil terkini, fokus kerja, dan pendidikan.",
+        title: "Profil terkini, fokus, dan pendidikan.",
         items: [
           {
             period: "Saat ini",
             role: "Full-Stack Web Developer",
             company: "Self Employed",
             summary:
-              "Membangun business web apps dengan React, TypeScript, Node.js, autentikasi, API, model database, dan workflow deployment live.",
-            tags: ["React", "TypeScript", "Node.js", "Prisma", "Business Web Apps"],
+              "Membangun business web applications yang responsif dengan React, TypeScript, Node.js, struktur UI rapi, dan workflow project yang siap deploy.",
+            tags: ["React", "TypeScript", "Node.js", "Business Web Apps"],
           },
           {
             period: "Pendidikan",
             role: "Mahasiswa",
             company: "Universitas Islam Kalimantan Muhammad Arsyad Al Banjari",
             summary:
-              "Menempuh pendidikan di UNISKA MAB sambil mengembangkan project web praktis dan memperkuat dasar pengembangan software.",
+              "Menempuh pendidikan di UNISKA MAB sambil memperkuat dasar software development dan skill web development praktis.",
             tags: ["UNISKA MAB", "Web Development", "Software Fundamentals"],
           },
         ],
       },
       projects: {
-        kicker: "Proyek",
-        title: "Karya pilihan dari profil developer saya saat ini.",
-        body: "Project live yang terhubung dengan GitHub publik dan profil full-stack web developer saya.",
+        kicker: "Karya",
+        title: "Karya publik terverifikasi.",
+        body: "Hanya karya publik yang sudah jelas ditampilkan di sini.",
         items: [
           {
             title: "Ariza Portfolio",
             type: "Website Pribadi",
             year: "2026",
             summary:
-              "Website portfolio bilingual untuk menampilkan profil, skill, project, dan kontak dalam satu halaman responsif yang rapi.",
-            result: "Personal web presence yang selaras dengan profil LinkedIn terkini.",
+              "Website portfolio bilingual untuk menampilkan profil yang selaras dengan LinkedIn, skill, karya pilihan, dan kontak dalam satu halaman responsif.",
+            result: "Personal web presence yang terhubung dengan profil LinkedIn terkini.",
             tags: ["Next.js", "React", "TypeScript"],
             links: [
-              { label: "Live", href: "https://portofolio-arizanaufalkholish.vercel.app" },
+              { label: "Live", href: "https://portofolio-arizanaufalkholish-six.vercel.app" },
               { label: "Repo", href: "https://github.com/Antophic/Portofolio" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/ariza-naufal-kholish-1557772a5/" },
             ],
             image: {
               src: "/projects/ariza-portfolio.svg",
               alt: "Gambar preview untuk project Ariza Portfolio",
             },
           },
-          {
-            title: "ServiceFlow",
-            type: "Aplikasi Booking Management",
-            year: "2026",
-            summary:
-              "Sistem booking dan manajemen job full-stack untuk bisnis jasa, mencakup booking publik, review admin, assignment staff, scheduling, dan status pekerjaan.",
-            result: "Dashboard operasional berbasis database untuk mengelola pekerjaan service dari request sampai selesai.",
-            tags: ["React", "TypeScript", "Node.js", "MySQL", "Prisma"],
-            links: [
-              { label: "Live", href: "https://service-booking-management-system.vercel.app" },
-              {
-                label: "Repo",
-                href: "https://github.com/Antophic/SERVICE-BOOKING-MANAGEMENT-SYSTEM",
-              },
-            ],
-            image: {
-              src: "/projects/serviceflow-dashboard.webp",
-              alt: "Screenshot dashboard operasional untuk project ServiceFlow",
-            },
-          },
-          {
-            title: "Mini CRM",
-            type: "Aplikasi Sales Pipeline",
-            year: "2026",
-            summary:
-              "Workspace CRM full-stack untuk melacak prospect, nilai deal, follow-up, notes, dan aktivitas client dari dashboard yang terautentikasi.",
-            result: "Tool sales pipeline praktis dengan role-based access, filter, metrik, dan riwayat aktivitas.",
-            tags: ["React", "TypeScript", "Express", "MySQL", "JWT"],
-            links: [
-              { label: "Live", href: "https://mini-crm-opal-two.vercel.app" },
-              { label: "Repo", href: "https://github.com/Antophic/Mini-CRM" },
-            ],
-            image: {
-              src: "/projects/mini-crm-dashboard.webp",
-              alt: "Screenshot dashboard untuk project Mini CRM",
-            },
-          },
-          {
-            title: "AI Business Assistant",
-            type: "Aplikasi AI Lead Capture",
-            year: "2026",
-            summary:
-              "Demo website bisnis dengan AI chat assistant yang menjawab pertanyaan customer, mendeteksi intent lead, dan menangkap lead untuk follow-up.",
-            result: "Workflow lead generation yang menggabungkan landing page produk, AI chat API, validasi, dan data lead siap dashboard.",
-            tags: ["Next.js", "TypeScript", "OpenAI API", "Supabase"],
-            links: [
-              { label: "Live", href: "https://ai-bisnis.vercel.app" },
-              { label: "Repo", href: "https://github.com/Antophic/ai-bisnis" },
-            ],
-            image: {
-              src: "/projects/ai-business-assistant.png",
-              alt: "Screenshot landing page untuk project AI Business Assistant",
-            },
-          },
         ],
       },
       skills: {
         kicker: "Skill",
-        title: "Tools sesuai profil full-stack saat ini.",
+        title: "Tools yang selaras dengan profil LinkedIn.",
         groups: [
           {
             group: "Frontend",
@@ -378,31 +225,10 @@ export const portfolio = {
           },
         ],
       },
-      process: {
-        kicker: "Proses",
-        title: "Cara saya mengubah kebutuhan bisnis menjadi web app.",
-        steps: [
-          {
-            step: "01",
-            title: "Understand",
-            body: "Memahami tujuan bisnis, alur pengguna, konten, dan fitur utama yang perlu berjalan lebih dulu.",
-          },
-          {
-            step: "02",
-            title: "Build",
-            body: "Membangun layar responsif dan logic aplikasi memakai dasar React, TypeScript, dan Node.js.",
-          },
-          {
-            step: "03",
-            title: "Ship",
-            body: "Menyiapkan project untuk deploy, meninjau hasilnya, dan menjaga struktur tetap mudah dilanjutkan.",
-          },
-        ],
-      },
       contact: {
         kicker: "Kontak",
         title: "Mari bangun web app atau website bisnis yang praktis.",
-        body: "Hubungi saya kalau kamu butuh website responsif, portfolio, atau business web app dengan workflow full-stack yang jelas.",
+        body: "Hubungi saya melalui email atau LinkedIn untuk website responsif, portfolio, dan business web app.",
         button: "Kirim email",
       },
     },

@@ -30,25 +30,25 @@ test("server-renders the Ariza portfolio", async () => {
 
   const html = await response.text();
   assert.match(html, /Ariza Naufal Kholish/);
-  assert.match(html, /Full-stack web developer for practical business web apps/);
-  assert.match(html, /Full-stack portfolio/);
+  assert.match(html, /Full-Stack Web Developer focused on business web apps/);
+  assert.match(html, /LinkedIn profile/);
   assert.match(html, /Self Employed/);
+  assert.match(html, /Full-Stack Web Developer \| React, TypeScript, Node\.js \| Business Web Apps/);
   assert.match(html, /Universitas Islam Kalimantan Muhammad Arsyad Al Banjari/);
   assert.match(html, /newcastlezzz900@gmail\.com/);
   assert.match(html, /linkedin\.com\/in\/ariza-naufal-kholish-1557772a5/);
   assert.match(html, />EN</);
   assert.match(html, />ID</);
-  assert.match(html, /ServiceFlow/);
-  assert.match(html, /Mini CRM/);
-  assert.match(html, /AI Business Assistant/);
-  assert.match(html, /service-booking-management-system\.vercel\.app/);
-  assert.match(html, /mini-crm-opal-two\.vercel\.app/);
-  assert.match(html, /ai-bisnis\.vercel\.app/);
+  assert.match(html, /Ariza Portfolio/);
   assert.match(html, /\/projects\/ariza-portfolio\.svg/);
-  assert.match(html, /\/projects\/serviceflow-dashboard\.webp/);
-  assert.match(html, /\/projects\/mini-crm-dashboard\.webp/);
-  assert.match(html, /\/projects\/ai-business-assistant\.png/);
-  assert.doesNotMatch(html, /Pustaka Banua Raya|Project Log|Next Project Slot|Project Showcase System/);
+  assert.doesNotMatch(
+    html,
+    /ServiceFlow|Mini CRM|AI Business Assistant|service-booking-management-system|mini-crm-opal-two|ai-bisnis/,
+  );
+  assert.doesNotMatch(
+    html,
+    /Pustaka Banua Raya|Project Log|Next Project Slot|Project Showcase System/,
+  );
   assert.match(html, /Profile/);
   assert.doesNotMatch(html, /react-loading-skeleton|codex-preview/);
 });
@@ -69,19 +69,20 @@ test("keeps portfolio content easy to edit", async () => {
   assert.match(data, /export const portfolio/);
   assert.match(data, /name: "Ariza Naufal Kholish"/);
   assert.match(data, /languages:/);
-  assert.match(data, /Full-stack web developer untuk aplikasi web bisnis yang praktis/);
+  assert.match(data, /Full-Stack Web Developer untuk business web apps/);
+  assert.match(data, /Profil LinkedIn/);
   assert.match(data, /experience:/);
   assert.match(data, /projects:/);
-  assert.match(data, /ServiceFlow/);
-  assert.match(data, /Mini CRM/);
-  assert.match(data, /AI Business Assistant/);
-  assert.match(data, /https:\/\/github\.com\/Antophic\/Mini-CRM/);
-  assert.match(data, /https:\/\/github\.com\/Antophic\/SERVICE-BOOKING-MANAGEMENT-SYSTEM/);
-  assert.match(data, /https:\/\/github\.com\/Antophic\/ai-bisnis/);
-  assert.doesNotMatch(data, /Pustaka Banua Raya|projectLog:|Next Project Slot|Project Showcase System/);
+  assert.match(data, /Ariza Portfolio/);
+  assert.match(data, /profileLinkLabel:/);
+  assert.doesNotMatch(
+    data,
+    /ServiceFlow|Mini CRM|AI Business Assistant|SERVICE-BOOKING-MANAGEMENT-SYSTEM|ai-bisnis|Pustaka Banua Raya|projectLog:|Next Project Slot|Project Showcase System|strengths:|process:/,
+  );
   assert.match(data, /image:/);
   assert.match(page, /content\.projects\.items\.map/);
   assert.doesNotMatch(page, /content\.projects\.projectLog/);
+  assert.doesNotMatch(page, /social-rail|content\.strengths|content\.process/);
   assert.match(page, /project\.image\.src/);
   assert.match(page, /project\.links\.map/);
   assert.doesNotMatch(page, /project-log-thumb/);
@@ -95,10 +96,5 @@ test("keeps portfolio content easy to edit", async () => {
   assert.match(layout, /generateMetadata/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.ok(!files.includes("_sites-preview"));
-  assert.deepEqual(projectImages.sort(), [
-    "ai-business-assistant.png",
-    "ariza-portfolio.svg",
-    "mini-crm-dashboard.webp",
-    "serviceflow-dashboard.webp",
-  ]);
+  assert.deepEqual(projectImages.sort(), ["ariza-portfolio.svg"]);
 });

@@ -160,15 +160,6 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="social-rail" aria-label="Portfolio links">
-        {portfolio.links.map((link) => (
-          <a href={link.href} key={link.label} rel="noreferrer" target="_blank">
-            {link.label}
-          </a>
-        ))}
-        <a href={portfolio.contact.href}>Email</a>
-      </div>
-
       <section className="hero-section" aria-labelledby="hero-title">
         <div className="hero-copy" data-reveal="left">
           <p className="eyebrow">{content.eyebrow}</p>
@@ -194,7 +185,7 @@ export default function Home() {
         >
           <div className="profile-head">
             <Image
-              alt={`GitHub profile avatar for ${portfolio.name}`}
+              alt={`Profile avatar for ${portfolio.name}`}
               className="profile-avatar"
               height={96}
               src={portfolio.avatar}
@@ -223,6 +214,16 @@ export default function Home() {
             </div>
           </dl>
 
+          <a
+            className="profile-link"
+            href={portfolio.links[0].href}
+            rel="noreferrer"
+            target="_blank"
+          >
+            {content.profileLinkLabel}
+            <span aria-hidden="true">-&gt;</span>
+          </a>
+
           <div className="capability-list" aria-label="Capability highlights">
             {content.stats.map((item) => (
               <div key={item.value}>
@@ -244,19 +245,6 @@ export default function Home() {
           {content.about.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
-          <div className="strength-grid">
-            {content.strengths.map((item, index) => (
-              <article
-                className="strength-card"
-                data-reveal
-                key={item.title}
-                style={{ transitionDelay: `${index * 70}ms` }}
-              >
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -368,30 +356,6 @@ export default function Home() {
                 {group.items.map((skill) => (
                   <span key={skill}>{skill}</span>
                 ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section process-section" data-reveal>
-        <div className="section-heading">
-          <p className="section-kicker">{content.process.kicker}</p>
-          <h2>{content.process.title}</h2>
-        </div>
-
-        <div className="process-list">
-          {content.process.steps.map((item, index) => (
-            <article
-              className="process-item"
-              data-reveal
-              key={item.step}
-              style={{ transitionDelay: `${index * 70}ms` }}
-            >
-              <span>{item.step}</span>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
               </div>
             </article>
           ))}
