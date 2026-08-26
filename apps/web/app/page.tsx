@@ -219,7 +219,7 @@ export default function Home() {
             </div>
             <div>
               <dt>{content.profile.stackLabel}</dt>
-              <dd>React / Next.js / TypeScript</dd>
+              <dd>React / TypeScript / Node.js</dd>
             </div>
           </dl>
 
@@ -338,52 +338,6 @@ export default function Home() {
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="project-log" data-reveal>
-          <div className="project-log-heading">
-            <p className="section-kicker">{content.projects.projectLog.kicker}</p>
-            <h3>{content.projects.projectLog.title}</h3>
-            <p>{content.projects.projectLog.body}</p>
-          </div>
-
-          <div className="project-log-list">
-            {content.projects.projectLog.items.map((project, index) => (
-              <article
-                className="project-log-item"
-                data-reveal
-                key={project.name}
-                style={{ transitionDelay: `${index * 80}ms` }}
-              >
-                <div className="project-log-thumb">
-                  <Image
-                    alt={project.image.alt}
-                    className="project-image"
-                    fill
-                    sizes="(max-width: 920px) 100vw, 150px"
-                    src={project.image.src}
-                    unoptimized
-                  />
-                </div>
-                <div className="project-log-meta">
-                  <span>{project.category}</span>
-                  <strong>{project.status}</strong>
-                </div>
-                <div>
-                  <h3>{project.name}</h3>
-                  <p>{project.summary}</p>
-                </div>
-                <div className="project-log-role">
-                  <strong>{project.role}</strong>
-                  <div className="tag-list">
-                    {project.stack.map((tool) => (
-                      <span key={tool}>{tool}</span>
-                    ))}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 

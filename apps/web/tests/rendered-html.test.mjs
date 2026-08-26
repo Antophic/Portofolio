@@ -29,17 +29,20 @@ test("server-renders the Ariza portfolio", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Ariza/);
-  assert.match(html, /I build web interfaces/);
-  assert.match(html, /Frontend portfolio/);
+  assert.match(html, /Ariza Naufal Kholish/);
+  assert.match(html, /I build business web apps/);
+  assert.match(html, /Full-stack portfolio/);
+  assert.match(html, /Self Employed/);
+  assert.match(html, /Universitas Islam Kalimantan Muhammad Arsyad Al Banjari/);
   assert.match(html, /newcastlezzz900@gmail\.com/);
+  assert.match(html, /linkedin\.com\/in\/ariza-naufal-kholish-1557772a5/);
   assert.match(html, />EN</);
   assert.match(html, />ID</);
-  assert.match(html, /Project Log/);
   assert.match(html, /Pustaka Banua Raya Website/);
   assert.match(html, /\/projects\/ariza-portfolio\.svg/);
   assert.match(html, /\/projects\/pustaka-banua-raya\.svg/);
-  assert.match(html, /Experience/);
+  assert.doesNotMatch(html, /Project Log|Next Project Slot|Project Showcase System/);
+  assert.match(html, /Profile/);
   assert.doesNotMatch(html, /react-loading-skeleton|codex-preview/);
 });
 
@@ -57,17 +60,17 @@ test("keeps portfolio content easy to edit", async () => {
   ]);
 
   assert.match(data, /export const portfolio/);
-  assert.match(data, /name: "Ariza"/);
+  assert.match(data, /name: "Ariza Naufal Kholish"/);
   assert.match(data, /languages:/);
-  assert.match(data, /Saya membangun interface web/);
+  assert.match(data, /Saya membangun aplikasi web bisnis/);
   assert.match(data, /experience:/);
   assert.match(data, /projects:/);
-  assert.match(data, /projectLog:/);
+  assert.doesNotMatch(data, /projectLog:|Next Project Slot|Project Showcase System/);
   assert.match(data, /image:/);
   assert.match(page, /content\.projects\.items\.map/);
-  assert.match(page, /content\.projects\.projectLog\.items\.map/);
+  assert.doesNotMatch(page, /content\.projects\.projectLog/);
   assert.match(page, /project\.image\.src/);
-  assert.match(page, /project-log-thumb/);
+  assert.doesNotMatch(page, /project-log-thumb/);
   assert.match(page, /content\.experience\.items\.map/);
   assert.match(page, /useState<Language>\("en"\)/);
   assert.match(page, /IntersectionObserver/);
@@ -80,7 +83,6 @@ test("keeps portfolio content easy to edit", async () => {
   assert.ok(!files.includes("_sites-preview"));
   assert.deepEqual(projectImages.sort(), [
     "ariza-portfolio.svg",
-    "project-showcase.svg",
     "pustaka-banua-raya.svg",
   ]);
 });

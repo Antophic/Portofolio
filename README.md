@@ -28,7 +28,6 @@ Edit file `packages/portfolio-content/src/index.ts` untuk mengganti:
 - daftar kelebihan
 - daftar skill
 - daftar project
-- project log untuk menampilkan project yang sedang/pernah dikerjakan
 - gambar project di `apps/web/public/projects`
 - alur kerja
 
