@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { portfolio } from "@ariza/portfolio-content";
 
 type Language = keyof typeof portfolio.languages;
+const sectionIds = ["about", "experience", "projects", "contact"] as const;
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>("en");
@@ -28,6 +29,21 @@ export default function Home() {
           document.documentElement.scrollHeight - window.innerHeight;
         const current = scrollable > 0 ? window.scrollY / scrollable : 0;
         setScrollProgress(Math.min(Math.max(current, 0), 1));
+
+        const topbarBottom =
+          document.querySelector(".topbar")?.getBoundingClientRect().bottom ?? 120;
+        const probeY = window.scrollY + topbarBottom + 48;
+        const currentSection = sectionIds.reduce<(typeof sectionIds)[number]>(
+          (activeId, id) => {
+            const section = document.getElementById(id);
+            return section && section.offsetTop <= probeY ? id : activeId;
+          },
+          sectionIds[0],
+        );
+        const atPageEnd =
+          window.scrollY + window.innerHeight >=
+          document.documentElement.scrollHeight - 24;
+        setActiveSection(atPageEnd ? "contact" : currentSection);
       });
     };
 
@@ -40,30 +56,6 @@ export default function Home() {
       window.removeEventListener("scroll", updateScrollProgress);
       window.removeEventListener("resize", updateScrollProgress);
     };
-  }, []);
-
-  useEffect(() => {
-    const sections = ["about", "experience", "projects", "contact"]
-      .map((id) => document.getElementById(id))
-      .filter((section): section is HTMLElement => Boolean(section));
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: "-38% 0px -52% 0px",
-        threshold: 0,
-      },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -263,6 +255,16 @@ export default function Home() {
               style={{ transitionDelay: `${index * 85}ms` }}
             >
               <div className="item-period">{item.period}</div>
+              <figure className="experience-visual">
+                <Image
+                  alt={item.image.alt}
+                  className="experience-image"
+                  height={108}
+                  src={item.image.src}
+                  unoptimized
+                  width={108}
+                />
+              </figure>
               <div>
                 <h3>
                   {item.role}

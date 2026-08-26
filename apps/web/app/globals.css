@@ -63,6 +63,7 @@ a {
 .profile-panel,
 .section-heading,
 .about-copy,
+.experience-visual,
 .project-card,
 .experience-item,
 .contact-band {
@@ -91,7 +92,7 @@ a {
   justify-content: space-between;
   padding: 12px;
   position: sticky;
-  top: 18px;
+  top: 0;
   transition:
     background 180ms ease,
     border-color 180ms ease,
@@ -559,11 +560,12 @@ h3 {
 }
 
 .experience-item {
+  align-items: start;
   border: 1px solid transparent;
   border-radius: 8px;
   display: grid;
-  gap: 28px;
-  grid-template-columns: 150px 1fr;
+  gap: 24px;
+  grid-template-columns: 120px 108px 1fr;
   padding: 24px;
   transition:
     background 160ms ease,
@@ -575,6 +577,25 @@ h3 {
   background: rgba(255, 255, 255, 0.035);
   border-color: var(--line);
   transform: translateY(-2px);
+}
+
+.experience-visual {
+  background:
+    linear-gradient(145deg, rgba(123, 224, 195, 0.08), rgba(240, 217, 167, 0.06)),
+    var(--surface);
+  border: 1px solid rgba(244, 239, 229, 0.1);
+  border-radius: 8px;
+  height: 108px;
+  margin: 0;
+  overflow: hidden;
+  width: 108px;
+}
+
+.experience-image {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .item-period,
@@ -810,15 +831,20 @@ h3 {
   .project-card {
     grid-template-columns: 1fr;
   }
+
+  .experience-visual {
+    height: 132px;
+    width: 132px;
+  }
 }
 
 @media (max-width: 640px) {
-  .site-shell {
-    padding: 18px 16px 38px;
+  html {
+    scroll-padding-top: 220px;
   }
 
-  .topbar {
-    top: 10px;
+  .site-shell {
+    padding: 18px 16px 38px;
   }
 
   .nav-links {

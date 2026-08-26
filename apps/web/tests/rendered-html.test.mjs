@@ -39,32 +39,39 @@ test("server-renders the Ariza portfolio", async () => {
   assert.match(html, /linkedin\.com\/in\/ariza-naufal-kholish-1557772a5/);
   assert.match(html, />EN</);
   assert.match(html, />ID</);
-  assert.match(html, /Ariza Portfolio/);
-  assert.match(html, /\/projects\/ariza-portfolio\.svg/);
+  assert.match(html, /Projects from my LinkedIn profile/);
+  assert.match(html, /ServiceFlow/);
+  assert.match(html, /Mini CRM/);
+  assert.match(html, /AI Business Assistant/);
+  assert.match(html, /service-booking-management-system\.vercel\.app/);
+  assert.match(html, /mini-crm-opal-two\.vercel\.app/);
+  assert.match(html, /ai-bisnis\.vercel\.app/);
+  assert.match(html, /\/projects\/serviceflow-dashboard\.webp/);
+  assert.match(html, /\/projects\/mini-crm-dashboard\.webp/);
+  assert.match(html, /\/projects\/ai-business-assistant\.png/);
   assert.doesNotMatch(
     html,
-    /ServiceFlow|Mini CRM|AI Business Assistant|service-booking-management-system|mini-crm-opal-two|ai-bisnis/,
+    /Ariza Portfolio|Only confirmed public work|Verified public work|Pustaka Banua Raya|Project Log|Next Project Slot|Project Showcase System/,
   );
-  assert.doesNotMatch(
-    html,
-    /Pustaka Banua Raya|Project Log|Next Project Slot|Project Showcase System/,
-  );
+  assert.match(html, /\/profile\/uniska-logo\.png/);
   assert.match(html, /Profile/);
   assert.doesNotMatch(html, /react-loading-skeleton|codex-preview/);
 });
 
 test("keeps portfolio content easy to edit", async () => {
-  const [data, page, layout, packageJson, files, projectImages] = await Promise.all([
-    readFile(
-      new URL("../../../packages/portfolio-content/src/index.ts", import.meta.url),
-      "utf8",
-    ),
-    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../package.json", import.meta.url), "utf8"),
-    readdir(new URL("../app/", import.meta.url)),
-    readdir(new URL("../public/projects/", import.meta.url)),
-  ]);
+  const [data, page, layout, packageJson, files, projectImages, profileImages] =
+    await Promise.all([
+      readFile(
+        new URL("../../../packages/portfolio-content/src/index.ts", import.meta.url),
+        "utf8",
+      ),
+      readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+      readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+      readFile(new URL("../package.json", import.meta.url), "utf8"),
+      readdir(new URL("../app/", import.meta.url)),
+      readdir(new URL("../public/projects/", import.meta.url)),
+      readdir(new URL("../public/profile/", import.meta.url)),
+    ]);
 
   assert.match(data, /export const portfolio/);
   assert.match(data, /name: "Ariza Naufal Kholish"/);
@@ -73,11 +80,17 @@ test("keeps portfolio content easy to edit", async () => {
   assert.match(data, /Profil LinkedIn/);
   assert.match(data, /experience:/);
   assert.match(data, /projects:/);
-  assert.match(data, /Ariza Portfolio/);
+  assert.match(data, /ServiceFlow/);
+  assert.match(data, /Mini CRM/);
+  assert.match(data, /AI Business Assistant/);
+  assert.match(data, /https:\/\/github\.com\/Antophic\/Mini-CRM/);
+  assert.match(data, /https:\/\/github\.com\/Antophic\/SERVICE-BOOKING-MANAGEMENT-SYSTEM/);
+  assert.match(data, /https:\/\/github\.com\/Antophic\/ai-bisnis/);
   assert.match(data, /profileLinkLabel:/);
+  assert.match(data, /\/profile\/uniska-logo\.png/);
   assert.doesNotMatch(
     data,
-    /ServiceFlow|Mini CRM|AI Business Assistant|SERVICE-BOOKING-MANAGEMENT-SYSTEM|ai-bisnis|Pustaka Banua Raya|projectLog:|Next Project Slot|Project Showcase System|strengths:|process:/,
+    /Ariza Portfolio|Only confirmed public work|Verified public work|Pustaka Banua Raya|projectLog:|Next Project Slot|Project Showcase System|strengths:|process:/,
   );
   assert.match(data, /image:/);
   assert.match(page, /content\.projects\.items\.map/);
@@ -87,6 +100,8 @@ test("keeps portfolio content easy to edit", async () => {
   assert.match(page, /project\.links\.map/);
   assert.doesNotMatch(page, /project-log-thumb/);
   assert.match(page, /content\.experience\.items\.map/);
+  assert.match(page, /experience-visual/);
+  assert.match(page, /item\.image\.src/);
   assert.match(page, /useState<Language>\("en"\)/);
   assert.match(page, /IntersectionObserver/);
   assert.match(page, /scroll-progress/);
@@ -96,5 +111,10 @@ test("keeps portfolio content easy to edit", async () => {
   assert.match(layout, /generateMetadata/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.ok(!files.includes("_sites-preview"));
-  assert.deepEqual(projectImages.sort(), ["ariza-portfolio.svg"]);
+  assert.deepEqual(projectImages.sort(), [
+    "ai-business-assistant.png",
+    "mini-crm-dashboard.webp",
+    "serviceflow-dashboard.webp",
+  ]);
+  assert.deepEqual(profileImages.sort(), ["uniska-logo.png"]);
 });
