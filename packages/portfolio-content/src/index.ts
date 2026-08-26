@@ -3,6 +3,7 @@ export const portfolio = {
   role: "Full-Stack Web Developer",
   specialty: "React, TypeScript, Node.js | Business Web Apps",
   location: "Banjarbaru, Indonesia",
+  avatar: "/profile/ariza-profile.jpeg",
   description:
     "LinkedIn-aligned portfolio profile for Ariza Naufal Kholish, a full-stack web developer focused on React, TypeScript, Node.js, and business web apps.",
   contact: {
@@ -62,6 +63,10 @@ export const portfolio = {
             summary:
               "Builds responsive business web applications with React, TypeScript, Node.js, clean UI structure, and deployment-ready project workflows.",
             tags: ["React", "TypeScript", "Node.js", "Business Web Apps"],
+            image: {
+              src: "/profile/javascript-logo.jpeg",
+              alt: "JavaScript logo",
+            },
           },
           {
             period: "Education",
@@ -193,6 +198,10 @@ export const portfolio = {
             summary:
               "Membangun business web applications yang responsif dengan React, TypeScript, Node.js, struktur UI rapi, dan workflow project yang siap deploy.",
             tags: ["React", "TypeScript", "Node.js", "Business Web Apps"],
+            image: {
+              src: "/profile/javascript-logo.jpeg",
+              alt: "Logo JavaScript",
+            },
           },
           {
             period: "Pendidikan",

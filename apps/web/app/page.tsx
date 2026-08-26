@@ -106,7 +106,14 @@ export default function Home() {
       <header className={scrollProgress > 0.02 ? "topbar is-scrolled" : "topbar"} id="home">
         <a className="brand-lockup" href="#home" aria-label={`${portfolio.name} home`}>
           <span className="brand-mark" aria-hidden="true">
-            <span className="brand-initials">AN</span>
+            <Image
+              alt=""
+              className="brand-avatar"
+              height={44}
+              src={portfolio.avatar}
+              unoptimized
+              width={44}
+            />
           </span>
           <span>
             <strong>{portfolio.name}</strong>
@@ -169,9 +176,14 @@ export default function Home() {
           style={{ transitionDelay: "90ms" }}
         >
           <div className="profile-head">
-            <span className="profile-monogram" aria-hidden="true">
-              AN
-            </span>
+            <Image
+              alt={`Foto profil ${portfolio.name}`}
+              className="profile-avatar"
+              height={96}
+              src={portfolio.avatar}
+              unoptimized
+              width={96}
+            />
             <div>
               <span>{content.status}</span>
               <h2>{portfolio.name}</h2>

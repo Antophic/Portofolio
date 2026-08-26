@@ -51,6 +51,8 @@ test("server-renders the Ariza portfolio", async () => {
     /AI Business Assistant|ai-bisnis|ai-business-assistant|Ariza Portfolio|Only confirmed public work|Verified public work|Pustaka Banua Raya|Project Log|Next Project Slot|Project Showcase System/,
   );
   assert.doesNotMatch(html, /avatars\.githubusercontent\.com\/u\/245324916/);
+  assert.match(html, /\/profile\/ariza-profile\.jpeg/);
+  assert.match(html, /\/profile\/javascript-logo\.jpeg/);
   assert.match(html, /\/profile\/uniska-logo\.png/);
   assert.match(html, /Profile/);
   assert.doesNotMatch(html, /react-loading-skeleton|codex-preview/);
@@ -83,6 +85,8 @@ test("keeps portfolio content easy to edit", async () => {
   assert.match(data, /https:\/\/github\.com\/Antophic\/Mini-CRM/);
   assert.match(data, /https:\/\/github\.com\/Antophic\/SERVICE-BOOKING-MANAGEMENT-SYSTEM/);
   assert.match(data, /profileLinkLabel:/);
+  assert.match(data, /\/profile\/ariza-profile\.jpeg/);
+  assert.match(data, /\/profile\/javascript-logo\.jpeg/);
   assert.match(data, /\/profile\/uniska-logo\.png/);
   assert.doesNotMatch(
     data,
@@ -104,9 +108,9 @@ test("keeps portfolio content easy to edit", async () => {
   assert.match(page, /IntersectionObserver/);
   assert.match(page, /scroll-progress/);
   assert.match(page, /data-reveal/);
-  assert.match(page, /className="brand-initials"/);
-  assert.match(page, /className="profile-monogram"/);
-  assert.doesNotMatch(page, /brand-avatar|profile-avatar/);
+  assert.match(page, /className="brand-avatar"/);
+  assert.match(page, /className="profile-avatar"/);
+  assert.doesNotMatch(page, /brand-initials|profile-monogram/);
   assert.doesNotMatch(page, /portfolio\.initials/);
   assert.match(layout, /generateMetadata/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
@@ -115,5 +119,9 @@ test("keeps portfolio content easy to edit", async () => {
     "mini-crm-dashboard.webp",
     "serviceflow-dashboard.webp",
   ]);
-  assert.deepEqual(profileImages.sort(), ["uniska-logo.png"]);
+  assert.deepEqual(profileImages.sort(), [
+    "ariza-profile.jpeg",
+    "javascript-logo.jpeg",
+    "uniska-logo.png",
+  ]);
 });
