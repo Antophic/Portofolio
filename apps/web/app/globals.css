@@ -38,6 +38,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   margin: 0;
+  overflow-x: hidden;
 }
 
 a {
@@ -55,6 +56,17 @@ a {
   max-width: 1180px;
   padding: 26px 30px 56px;
   position: relative;
+  width: min(100%, 1180px);
+}
+
+.hero-copy,
+.profile-panel,
+.section-heading,
+.about-copy,
+.project-card,
+.experience-item,
+.contact-band {
+  min-width: 0;
 }
 
 .scroll-progress {
@@ -296,6 +308,7 @@ h2,
 h3,
 p {
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 h1 {
@@ -648,6 +661,13 @@ h3 {
   aspect-ratio: 16 / 10;
   margin: 0;
   min-height: 164px;
+  min-width: 0;
+  width: 100%;
+}
+
+.project-card > div,
+.project-result {
+  min-width: 0;
 }
 
 .project-image {
@@ -672,6 +692,32 @@ h3 {
   color: var(--warm);
   display: block;
   line-height: 1.5;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.project-links a {
+  align-items: center;
+  border: 1px solid rgba(123, 224, 195, 0.2);
+  border-radius: 8px;
+  color: var(--accent);
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 820;
+  gap: 8px;
+  min-height: 38px;
+  padding: 9px 11px;
+}
+
+.project-links a:focus-visible,
+.project-links a:hover {
+  background: rgba(123, 224, 195, 0.08);
+  outline: none;
 }
 
 .tag-list {
@@ -835,12 +881,18 @@ h3 {
     flex-direction: column;
   }
 
+  .hero-copy,
+  .hero-summary,
+  h1 {
+    max-width: min(100%, 22rem);
+  }
+
   .button {
     width: 100%;
   }
 
   h1 {
-    font-size: 2.55rem;
+    font-size: 2.05rem;
     line-height: 1.08;
   }
 

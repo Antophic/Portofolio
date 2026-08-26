@@ -335,6 +335,14 @@ export default function Home() {
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
+                <div className="project-links" aria-label={`${project.title} links`}>
+                  {project.links.map((link) => (
+                    <a href={link.href} key={link.href} rel="noreferrer" target="_blank">
+                      {link.label}
+                      <span aria-hidden="true">-&gt;</span>
+                    </a>
+                  ))}
+                </div>
               </div>
             </article>
           ))}

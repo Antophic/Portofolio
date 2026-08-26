@@ -5,7 +5,7 @@ export const portfolio = {
   location: "Banjarbaru, Indonesia",
   avatar: "https://avatars.githubusercontent.com/u/245324916?v=4",
   description:
-    "Ariza Naufal Kholish is a full-stack web developer building business web apps with React, TypeScript, and Node.js.",
+    "Ariza Naufal Kholish is a full-stack web developer building business web apps with React, TypeScript, Node.js, and modern deployment workflows.",
   contact: {
     email: "newcastlezzz900@gmail.com",
     href: "mailto:newcastlezzz900@gmail.com",
@@ -26,29 +26,29 @@ export const portfolio = {
         contact: "Contact",
       },
       eyebrow: "Full-stack portfolio",
-      headline: "I build business web apps with React, TypeScript, and Node.js.",
+      headline: "Full-stack web developer for practical business web apps.",
       subheadline:
-        "A full-stack web developer focused on turning business needs into responsive, practical, and maintainable web applications.",
+        "I build responsive products with React, TypeScript, Node.js, and database-backed workflows, including CRM, service booking, AI assistant, and portfolio projects.",
       contactLabel: "Get in touch",
       resumeLabel: "View projects",
       status: "Self Employed",
-      statusNote: "Focused on business web apps, portfolios, and responsive product interfaces.",
+      statusNote: "React, TypeScript, Node.js | Business Web Apps",
       profile: {
         locationLabel: "Location",
         focusLabel: "Focus",
         stackLabel: "Core stack",
       },
       stats: [
-        { value: "01", label: "Business web apps" },
-        { value: "02", label: "Full-stack implementation" },
-        { value: "03", label: "Responsive web interfaces" },
+        { value: "03", label: "Live business projects" },
+        { value: "FS", label: "Full-stack implementation" },
+        { value: "UI", label: "Responsive product interfaces" },
       ],
       about: {
         kicker: "About",
-        title: "I build practical web apps that are clear, responsive, and useful.",
+        title: "I build practical web apps backed by real product workflows.",
         paragraphs: [
-          "I work across frontend and backend foundations, using React, TypeScript, and Node.js to build web applications for real business needs.",
-          "My focus is simple: make the interface easy to use, keep the code maintainable, and ship work that can keep growing after the first release.",
+          "My current profile is full-stack web development for business applications. I work across frontend, backend, authentication, database flow, and deployment so each project can be tried as a working product.",
+          "Recent projects include ServiceFlow for service booking operations, Mini CRM for sales pipeline management, and AI Business Assistant for AI-powered lead capture.",
         ],
       },
       strengths: [
@@ -74,8 +74,8 @@ export const portfolio = {
             role: "Full-Stack Web Developer",
             company: "Self Employed",
             summary:
-              "Builds business web apps and portfolio websites with React, TypeScript, and Node.js, from interface structure to application logic.",
-            tags: ["React", "TypeScript", "Node.js", "Business Web Apps"],
+              "Builds business web apps with React, TypeScript, Node.js, authentication, APIs, database models, and live deployment workflows.",
+            tags: ["React", "TypeScript", "Node.js", "Prisma", "Business Web Apps"],
           },
           {
             period: "Education",
@@ -89,8 +89,8 @@ export const portfolio = {
       },
       projects: {
         kicker: "Projects",
-        title: "Selected work without placeholder entries.",
-        body: "A focused list of real portfolio work and business web projects, with filler entries removed.",
+        title: "Selected work from my current developer profile.",
+        body: "Live projects connected to my public GitHub and LinkedIn-facing full-stack web developer profile.",
         items: [
           {
             title: "Ariza Portfolio",
@@ -100,22 +100,67 @@ export const portfolio = {
               "A bilingual portfolio website for presenting profile, skills, projects, and contact information in one clean responsive page.",
             result: "A personal web presence aligned with the current LinkedIn profile.",
             tags: ["Next.js", "React", "TypeScript"],
+            links: [
+              { label: "Live", href: "https://portofolio-arizanaufalkholish.vercel.app" },
+              { label: "Repo", href: "https://github.com/Antophic/Portofolio" },
+            ],
             image: {
               src: "/projects/ariza-portfolio.svg",
               alt: "Preview image for the Ariza Portfolio project",
             },
           },
           {
-            title: "Pustaka Banua Raya Website",
-            type: "Business Website",
+            title: "ServiceFlow",
+            type: "Booking Management App",
             year: "2026",
             summary:
-              "A business website foundation prepared for a cleaner public presence, basic brand information, and future web app expansion.",
-            result: "A practical business web presence with room to grow.",
-            tags: ["Business Website", "Domain", "Hosting"],
+              "A full-stack booking and job management system for service businesses, covering public booking intake, admin review, staff assignment, scheduling, and job status workflows.",
+            result: "A database-backed operations dashboard for managing service work from request to completion.",
+            tags: ["React", "TypeScript", "Node.js", "MySQL", "Prisma"],
+            links: [
+              { label: "Live", href: "https://service-booking-management-system.vercel.app" },
+              {
+                label: "Repo",
+                href: "https://github.com/Antophic/SERVICE-BOOKING-MANAGEMENT-SYSTEM",
+              },
+            ],
             image: {
-              src: "/projects/pustaka-banua-raya.svg",
-              alt: "Preview image for the Pustaka Banua Raya website project",
+              src: "/projects/serviceflow-dashboard.webp",
+              alt: "Operations dashboard screenshot for the ServiceFlow project",
+            },
+          },
+          {
+            title: "Mini CRM",
+            type: "Sales Pipeline App",
+            year: "2026",
+            summary:
+              "A full-stack CRM workspace for tracking prospects, deal values, follow-ups, notes, and client activity from an authenticated dashboard.",
+            result: "A practical sales pipeline tool with role-based access, filtering, metrics, and activity history.",
+            tags: ["React", "TypeScript", "Express", "MySQL", "JWT"],
+            links: [
+              { label: "Live", href: "https://mini-crm-opal-two.vercel.app" },
+              { label: "Repo", href: "https://github.com/Antophic/Mini-CRM" },
+            ],
+            image: {
+              src: "/projects/mini-crm-dashboard.webp",
+              alt: "Dashboard screenshot for the Mini CRM project",
+            },
+          },
+          {
+            title: "AI Business Assistant",
+            type: "AI Lead Capture App",
+            year: "2026",
+            summary:
+              "A business website demo with an AI chat assistant that answers customer questions, detects lead intent, and captures qualified leads for follow-up.",
+            result: "A lead-generation workflow combining a product landing page, AI chat API, validation, and dashboard-ready lead data.",
+            tags: ["Next.js", "TypeScript", "OpenAI API", "Supabase"],
+            links: [
+              { label: "Live", href: "https://ai-bisnis.vercel.app" },
+              { label: "Repo", href: "https://github.com/Antophic/ai-bisnis" },
+            ],
+            image: {
+              src: "/projects/ai-business-assistant.png",
+              alt: "Landing page screenshot for the AI Business Assistant project",
             },
           },
         ],
@@ -176,29 +221,29 @@ export const portfolio = {
         contact: "Kontak",
       },
       eyebrow: "Portofolio full-stack",
-      headline: "Saya membangun aplikasi web bisnis dengan React, TypeScript, dan Node.js.",
+      headline: "Full-stack web developer untuk aplikasi web bisnis yang praktis.",
       subheadline:
-        "Full-stack web developer yang fokus mengubah kebutuhan bisnis menjadi aplikasi web responsif, praktis, dan mudah dikembangkan.",
+        "Saya membangun produk responsif dengan React, TypeScript, Node.js, dan workflow berbasis database, termasuk CRM, booking service, AI assistant, dan portfolio.",
       contactLabel: "Hubungi saya",
       resumeLabel: "Lihat proyek",
       status: "Self Employed",
-      statusNote: "Fokus pada business web apps, portfolio, dan interface produk responsif.",
+      statusNote: "React, TypeScript, Node.js | Business Web Apps",
       profile: {
         locationLabel: "Lokasi",
         focusLabel: "Fokus",
         stackLabel: "Stack utama",
       },
       stats: [
-        { value: "01", label: "Business web apps" },
-        { value: "02", label: "Implementasi full-stack" },
-        { value: "03", label: "Interface web responsif" },
+        { value: "03", label: "Project bisnis live" },
+        { value: "FS", label: "Implementasi full-stack" },
+        { value: "UI", label: "Interface produk responsif" },
       ],
       about: {
         kicker: "Tentang",
-        title: "Saya membangun web app praktis yang jelas, responsif, dan berguna.",
+        title: "Saya membangun web app praktis dari workflow produk nyata.",
         paragraphs: [
-          "Saya bekerja di sisi frontend dan dasar backend, memakai React, TypeScript, dan Node.js untuk membangun aplikasi web sesuai kebutuhan bisnis nyata.",
-          "Fokus saya sederhana: interface mudah digunakan, kode tetap mudah dirawat, dan hasilnya bisa terus dikembangkan setelah rilis pertama.",
+          "Profil saya sekarang fokus ke full-stack web development untuk aplikasi bisnis. Saya mengerjakan frontend, backend, autentikasi, alur database, dan deployment supaya setiap project bisa dicoba sebagai produk yang berjalan.",
+          "Project terbaru saya mencakup ServiceFlow untuk operasional booking service, Mini CRM untuk sales pipeline, dan AI Business Assistant untuk lead capture berbasis AI.",
         ],
       },
       strengths: [
@@ -224,8 +269,8 @@ export const portfolio = {
             role: "Full-Stack Web Developer",
             company: "Self Employed",
             summary:
-              "Membangun business web apps dan website portfolio dengan React, TypeScript, dan Node.js, dari struktur interface sampai logic aplikasi.",
-            tags: ["React", "TypeScript", "Node.js", "Business Web Apps"],
+              "Membangun business web apps dengan React, TypeScript, Node.js, autentikasi, API, model database, dan workflow deployment live.",
+            tags: ["React", "TypeScript", "Node.js", "Prisma", "Business Web Apps"],
           },
           {
             period: "Pendidikan",
@@ -239,8 +284,8 @@ export const portfolio = {
       },
       projects: {
         kicker: "Proyek",
-        title: "Karya pilihan tanpa entry placeholder.",
-        body: "Daftar ringkas project nyata dan web bisnis, dengan slot kosong dan tempelan yang sudah dibuang.",
+        title: "Karya pilihan dari profil developer saya saat ini.",
+        body: "Project live yang terhubung dengan GitHub publik dan profil full-stack web developer saya.",
         items: [
           {
             title: "Ariza Portfolio",
@@ -250,22 +295,67 @@ export const portfolio = {
               "Website portfolio bilingual untuk menampilkan profil, skill, project, dan kontak dalam satu halaman responsif yang rapi.",
             result: "Personal web presence yang selaras dengan profil LinkedIn terkini.",
             tags: ["Next.js", "React", "TypeScript"],
+            links: [
+              { label: "Live", href: "https://portofolio-arizanaufalkholish.vercel.app" },
+              { label: "Repo", href: "https://github.com/Antophic/Portofolio" },
+            ],
             image: {
               src: "/projects/ariza-portfolio.svg",
               alt: "Gambar preview untuk project Ariza Portfolio",
             },
           },
           {
-            title: "Pustaka Banua Raya Website",
-            type: "Website Bisnis",
+            title: "ServiceFlow",
+            type: "Aplikasi Booking Management",
             year: "2026",
             summary:
-              "Fondasi website bisnis untuk menyiapkan tampilan publik yang lebih bersih, informasi brand, dan ruang pengembangan web app berikutnya.",
-            result: "Web presence bisnis yang praktis dan bisa dikembangkan.",
-            tags: ["Business Website", "Domain", "Hosting"],
+              "Sistem booking dan manajemen job full-stack untuk bisnis jasa, mencakup booking publik, review admin, assignment staff, scheduling, dan status pekerjaan.",
+            result: "Dashboard operasional berbasis database untuk mengelola pekerjaan service dari request sampai selesai.",
+            tags: ["React", "TypeScript", "Node.js", "MySQL", "Prisma"],
+            links: [
+              { label: "Live", href: "https://service-booking-management-system.vercel.app" },
+              {
+                label: "Repo",
+                href: "https://github.com/Antophic/SERVICE-BOOKING-MANAGEMENT-SYSTEM",
+              },
+            ],
             image: {
-              src: "/projects/pustaka-banua-raya.svg",
-              alt: "Gambar preview untuk project website Pustaka Banua Raya",
+              src: "/projects/serviceflow-dashboard.webp",
+              alt: "Screenshot dashboard operasional untuk project ServiceFlow",
+            },
+          },
+          {
+            title: "Mini CRM",
+            type: "Aplikasi Sales Pipeline",
+            year: "2026",
+            summary:
+              "Workspace CRM full-stack untuk melacak prospect, nilai deal, follow-up, notes, dan aktivitas client dari dashboard yang terautentikasi.",
+            result: "Tool sales pipeline praktis dengan role-based access, filter, metrik, dan riwayat aktivitas.",
+            tags: ["React", "TypeScript", "Express", "MySQL", "JWT"],
+            links: [
+              { label: "Live", href: "https://mini-crm-opal-two.vercel.app" },
+              { label: "Repo", href: "https://github.com/Antophic/Mini-CRM" },
+            ],
+            image: {
+              src: "/projects/mini-crm-dashboard.webp",
+              alt: "Screenshot dashboard untuk project Mini CRM",
+            },
+          },
+          {
+            title: "AI Business Assistant",
+            type: "Aplikasi AI Lead Capture",
+            year: "2026",
+            summary:
+              "Demo website bisnis dengan AI chat assistant yang menjawab pertanyaan customer, mendeteksi intent lead, dan menangkap lead untuk follow-up.",
+            result: "Workflow lead generation yang menggabungkan landing page produk, AI chat API, validasi, dan data lead siap dashboard.",
+            tags: ["Next.js", "TypeScript", "OpenAI API", "Supabase"],
+            links: [
+              { label: "Live", href: "https://ai-bisnis.vercel.app" },
+              { label: "Repo", href: "https://github.com/Antophic/ai-bisnis" },
+            ],
+            image: {
+              src: "/projects/ai-business-assistant.png",
+              alt: "Screenshot landing page untuk project AI Business Assistant",
             },
           },
         ],
